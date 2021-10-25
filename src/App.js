@@ -1,15 +1,25 @@
 import './App.css';
-import Navbar from "./Components/Navbar";
-import Hero from "./Components/Hero";
-import Slider from "./Components/Slider";
-import Footer from "./Components/Footer";
-import Login from './Components/Login';
-import Signup from './Components/Signup';
-
+import React, { useEffect, lazy,Suspense } from 'react';
+import { Switch, Route } from 'react-router';
+const Login = lazy(() => import('./Components/Login'));
+const Signup = lazy(() => import('./Components/Signup'));
+const Navbar = lazy(() => import('./Components/Home/nav'));
 function App() {
   return (<div>
-  <Signup />
+          <Suspense fallback={
+        
+<div className="load">
+<h1>Loading
   
+  <div class="dots"><span class="dot z"></span><span class="dot f"></span><span class="dot s"></span><span class="dot t"><span class="dot l"></span></span></div>
+</h1></div>
+      }>
+        <Navbar/>
+          <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+            </Switch>
+            </Suspense>
   {/* <Navbar/>
   <Hero/>
   <Slider />
