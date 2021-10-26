@@ -5,15 +5,16 @@ import Slider from "./Components/Slider";
 import Footer from "./Components/Footer";
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import Features from './Components/Features';
 
 function App() {
   return (<div>
-  <Signup />
-  
-  {/* <Navbar/>
-  <Hero/>
+  {/* <Login /> */}
+  <Navbar />
+  <Hero />
   <Slider />
-  <Footer /> */}
+  <Features />
+  <Footer />
   </div>
   );
 }

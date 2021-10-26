@@ -6,9 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbarelement(){
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="#00000000" variant="dark" fixed="top">
       <Container>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home">Rpk2 Technology</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
@@ -23,9 +23,9 @@ function Navbarelement(){
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">More deets</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            Dank memes
+          <Nav.Link href="#SignUp">Sign Up</Nav.Link>
+          <Nav.Link eventKey={2} href="#Login">
+            Login 
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

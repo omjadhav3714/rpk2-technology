@@ -1,67 +1,56 @@
 import React from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import Card from "./Card";
+import list from "../data/listOfServices.json"
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 
-function Slider() {
+function Service(props) {
   return (
-    <section className="services">
-      <div className="container">
-        <div className="row">
-          <Splide
-            options={{
-              perPage: 3,
-              rewind: true,
-              fixedWidth: '12rem',
-              fixedHeight: '8rem',
+    <section className="page-section" id="services">
+      <div className="container px-4 px-lg-5">
+        <hr className="divider" />
 
-            }}>
-            <SplideSlide>
-              <div className="card">
-                <p>Service 1</p>
-              </div>
+        <Splide
+          options={{
+            type: "loop",
+            gap: "1rem",
+            pagination: false,
+            autoplay: true,
+            speed: 400,
+            interval: 1000,
+            pauseOnHover: true,
+            resetProgress: false,
+            perPage: 4,
+            breakpoints: {
+              600: {
+                perPage: 1,
+              },
+              800: {
+                perPage: 2,
+              },
+              1200:{
+                perPage: 3,
+              }
+            },
+            paginatiom:false,
+            padding: '1em',
+            arrows: "slider",
+          }} hasSliderWrapper
+
+        >
+          {list.items.map((item, i) => (
+            <SplideSlide >
+              <Card title={item} />
             </SplideSlide>
 
-
-            <SplideSlide>
-              <div>
-                <p>Service 2</p>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div>
-                <p>Service 3</p>
-              </div>
-            </SplideSlide><SplideSlide>
-              <div>
-                <p>Service 4</p>
-              </div>
-            </SplideSlide> <SplideSlide>
-              <div>
-                <p>Service 5</p>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div>
-                <p>Service 6</p>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="card">
-                <p>Service 7</p>
-              </div>            
-              </SplideSlide>
-          </Splide>
-        </div>
-
+          ))}
+        </Splide>
       </div>
-    </section>
 
+    </section >
 
-
-
-
-
-  )
+  );
 }
-export default Slider;
+export default Service;
