@@ -414,7 +414,7 @@ border: 2px solid red;}
   background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
   font-family: "work sans";
 }
-#loginform , #Sign-Upform{
+#loginform, #Sign-Upform{
   max-width: 500px;
   min-width: 300px;
   max-height: 700px;
@@ -433,16 +433,16 @@ border: 2px solid red;}
   font-size: 2rem;
 }
 
-.row{
+.rowl{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding-top: 2rem;
   max-width: 100%;
   
 }
 
-.row input{
+.rowl input{
   width: 80%;
   box-sizing: border-box;
 	border: none;
@@ -453,29 +453,29 @@ border: 2px solid red;}
   transition: box-shadow 0.2s ease-in;
 }
 
-.row input:focus{
+.rowl input:focus{
    box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
    outline: none;
 }
 
-.row input::-webkit-input-placeholder{
+.rowl input::-webkit-input-placeholder{
   opacity: 1;
   transition: opacity 0.25s ease-out;
 }
 
-.row input:hover::-webkit-input-placeholder,
-.row input:focus::-webkit-input-placeholder{
+.rowl input:hover::-webkit-input-placeholder,
+.rowl input:focus::-webkit-input-placeholder{
   opacity: 0;
 }
 
-.row label{
+.rowl label{
   align-self: start;
   padding-left: 4.5rem;
   padding-bottom: 0.5rem;
   color: rgba(187,187,187,0.9);
 }
 
-.row button{
+.rowl button{
   border-radius: 25px;
   width: 80%;
   height: 40px;
@@ -489,7 +489,7 @@ border: 2px solid red;}
   transition: opacity 0.25s ease-out;
 }
 
-.row button:hover{
+.rowl button:hover{
   opacity: 0.8;
 }
 
@@ -504,12 +504,6 @@ border: 2px solid red;}
   height: 3rem;
 }
 
-#twitterIcon{
-  background-image: url("https://image.flaticon.com/icons/svg/145/145812.svg");
-  background-repeat: no-repeat;
-  width: 3rem;
-  height: 3rem;
-}
 
 #googleIcon{
   background-image: url("https://image.flaticon.com/icons/svg/145/145804.svg");
@@ -533,8 +527,6 @@ border: 2px solid red;}
    padding-top: 2rem;
    margin-top: 1.5rem;
 }
-
-
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/

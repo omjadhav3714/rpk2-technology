@@ -24,13 +24,13 @@ function Login(){
   );
   
   const FormButton = props => (
-    <div id="button" class="row">
+    <div id="button" class="rowl">
       <button>{props.title}</button>
     </div>
   );
   
   const FormInput = props => (
-    <div class="row">
+    <div class="rowl">
       <label>{props.description}</label>
       <input type={props.type} placeholder={props.placeholder}/>
     </div>  
