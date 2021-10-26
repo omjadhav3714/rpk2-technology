@@ -1,10 +1,12 @@
 import './App.css';
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
 const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
 const Home = lazy(() => import('./Components/Home'));
+const Contact = lazy(() => import('./Components/Contact/contact'));
+const Footer = lazy(() => import('./Components/Footer'));
 
 function App() {
   return (<div>
@@ -17,13 +19,15 @@ function App() {
 </h1></div>
 }>
   <Navbar/>
+
     <Switch>
-    <Route exact path="/login" component={Login} />
-    <Route exact path="/signup" component={Signup} />
-    <Route exact path="/" component={Home} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/contact" component={Contact} />
+    </Switch>
 
-
-      </Switch>
+  <Footer/>
       </Suspense>
 {/* <Navbar/>
 <Hero/>
