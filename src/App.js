@@ -1,5 +1,5 @@
 import './App.css';
-import React, { lazy, Suspense } from 'react';
+import React, { useEffect,lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
 const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
@@ -9,6 +9,7 @@ const Contact = lazy(() => import('./Components/Contact/contact'));
 const Footer = lazy(() => import('./Components/Footer'));
 
 function App() {
+  
   return (<div>
     <Suspense fallback={
   
@@ -21,9 +22,10 @@ function App() {
   <Navbar/>
 
     <Switch>
+    <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/" component={Home} />
+      
       <Route exact path="/contact" component={Contact} />
     </Switch>
 

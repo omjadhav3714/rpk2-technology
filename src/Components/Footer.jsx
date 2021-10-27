@@ -12,7 +12,7 @@ function footer(){
           </div>
           <div className="col-lg-6">
             <form action="" method="post">
-              <input type="email" name="email" /><input type="submit" value="Subscribe"/>
+              <input className="fotemail" type="email" name="email" /><input type="submit" value="Subscribe"/>
             </form>
           </div>
         </div>

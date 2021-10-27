@@ -285,10 +285,11 @@ border: 2px solid red;}
   border-radius: 50px;
 }
 #footer .footer-newsletter form input[type=email] {
-  border: 0;
+  border: 0px none;
   padding: 4px;
   width: calc(100% - 100px);
 }
+
 #footer .footer-newsletter form input[type=submit] {
   position: absolute;
   top: 0;
