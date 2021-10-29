@@ -6,6 +6,7 @@ const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
 const Home = lazy(() => import('./Components/Home'));
 const Contact = lazy(() => import('./Components/Contact/contact'));
+const About = lazy(() => import('./Components/About/about'));
 const Footer = lazy(() => import('./Components/Footer'));
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      
+      <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
     </Switch>
 
