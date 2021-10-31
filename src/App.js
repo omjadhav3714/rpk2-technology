@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import React, { useEffect,lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
+const Additems = lazy(() => import("./admin/Additems"));
+const Viewitems = lazy(() => import("./admin/Viewitems"));
+const Contactretrive = lazy(() => import("./admin/Contactretrive"));
+const Usersretrive = lazy(() => import('./admin/Usersretrive'));
+const Dashboard = lazy(() => import('./admin/dashboard'));
 const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
@@ -66,6 +71,13 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       
       <AdminRoute exact path="/contact" component={Contact} />
+      <AdminRoute exact path="/admin/dashboard" component={Dashboard} />
+      <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
+
+      <AdminRoute exact path="/admin/additems" component={Additems} />
+      <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
+      <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
+      
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
     </Switch>
