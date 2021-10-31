@@ -1,50 +1,117 @@
-import React from "react";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from 'react';
+import { auth,db } from "../Firebase";
+import './login.css';
+import { Button } from 'antd';
+import { SendOutlined } from '@ant-design/icons';
+import { Link,useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+const eye = <FontAwesomeIcon icon={faEye} />
 function Signup(){
-      return(
-        <div className="test">
-        <div id="Sign-Upform">
-          <FormHeader title="Sign-Up" />
-          <Form />
-          <OtherMethods />
-        </div></div>
-      )
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  let history = useHistory();
+
+  let dispatch = useDispatch();
+  const registerWithEmailAndPassword = async () => {
+    try {
+      const res = await auth.createUserWithEmailAndPassword(email, password);
+      const user = res.user;
+      const idTokenResult = await user.getIdTokenResult()
+      var separatedString;
+      
+  
+      await db.collection("users").doc(user.email).set({
+        
+        name: user.email.split('@')[0],
+         role: "user",
+        email: user.email,
+      }).then(async() => {
+        await db.collection('users')
+    // .where('uid', '==', user.email)
+    .doc(user.email)
+   .get()
+   .then(doc => {
+      if (doc && doc.exists) {
+          separatedString = doc.data();
+         //use separatedString
+      }
+   }).catch((error) => {
+        console.log(error);
+      });
+        dispatch({
+          type: "LOGGED_IN_USER2",
+          payload: {
+            name: user.email.split("@")[0],
+            email: user.email,
+            token: idTokenResult.token,
+            role: separatedString.role,
+            id: user.email,
+            // id: res.data.id,
+          },
+        });
+      })
+      .catch(); 
+      // history.push("/");
+      console.log("hello",user);
+      alert("successfully Register");
+      history.push("/");
+   
+    
+      
+    } catch (err) {
+      console.error(err);
+      alert("Register Failed");
     }
-  const FormHeader = props => (
-      <h2 id="headerTitle">{props.title}</h2>
+  };
+      return(
+      <>
+         <div id="card">
+          <div id="card-content">
+            <div id="card-title">
+              <span className="register">Register</span>
+              <div class="underline-title1"></div>
+            </div>
+            <form onSubmit={registerWithEmailAndPassword} class="form">
+              <label for="user-email" style={{ paddingTop: '13px' }}>
+                &nbsp;Email
+              </label>
+              <input id="user-email" class="form-content" type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} autoFocus />
+              <div class="form-border"></div>
+              <div class="form-border"></div>
+              <label for="user-email1" style={{ paddingTop: '13px' }}>
+                &nbsp;Password
+              </label>
+              <div className="flex">
+              <input id="user-email1" class="form-content" name="email" value={password} onChange={e => setpassword(e.target.value)} autoFocus type={passwordShown ? "text" : "password"}/><i style={{
+            marginLeft: 'auto'
+          }} onClick={togglePasswordVisiblity}>  {eye}</i>
+          </div>
+              <div class="form-border"></div>
+              
+              <div class="form-border"></div>
+              <Button id="submit-btn" onClick={registerWithEmailAndPassword} type="primary" className="mb-3" block shape="round" icon={<SendOutlined />} disabled={!email || password.length < 6} size="large" >
+                &nbsp;Register
+              </Button>
+              <div>
+                <span className="sig">Do you have an account? </span> &nbsp;
+                <Link to="/login" id="signup" >
+                  Login
+                </Link>
+              </div>
+            </form>
+          </div>
+        </div>
+ 
+      </>
   );
+      }
   
-  
-  const Form = props => (
-     <div>
-       <FormInput description="Name" placeholder="Enter your Name" type="text" />
-       <FormInput description="Email" placeholder="Enter your Email" type="email" />
-       <FormInput description="Password" placeholder="Enter your password" type="password"/>
-       <FormButton title="Sign up"/>
-     </div>
-  );
-  
-  const FormButton = props => (
-    <div id="button" class="rowl">
-      <button>{props.title}</button>
-    </div>
-  );
-  
-  const FormInput = props => (
-    <div class="rowl">
-      <label>{props.description}</label>
-      <input type={props.type} placeholder={props.placeholder}/>
-    </div>  
-  );
-  
-  const OtherMethods = props => (
-    <div id="alternativeLogin">
-      <label>Or sign in with:</label>
-      <div id="iconGroup">
-      <a href="#" id="facebookIcon"></a>
-      <a href="#" id="googleIcon"></a>
-      </div>
-    </div>
-  );
   
 export default Signup;

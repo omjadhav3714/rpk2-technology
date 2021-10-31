@@ -1,7 +1,21 @@
+import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
+import firebase from 'firebase/compat/app';
 import './nav.css';
-import { Link } from 'react-router-dom';
-function nav() {
+import { Link,useHistory } from 'react-router-dom';
+const Nav=()=> {
+  let dispath = useDispatch();
+  let history = useHistory();
+  const logout = () => {
+    firebase.auth().signOut();
+    dispath({
+      type: "LOGOUT2",
+      payload: null,
+    });
+    alert("Successfully Logout");
+    history.push("/");
+  };
+  const { user } = useSelector((state) => ({ ...state }));
     return (
         <>
            <div className="navt">
@@ -83,8 +97,8 @@ function nav() {
                 </Link> */}
               </li>
 
-              {/* {user && ( */}
-                {/* <li class="nav-item active dropdown">
+              {user && (
+                 <li class="nav-item active dropdown">
                   <li class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {user.email && user.email.split('@')[0]}
                   </li>
@@ -92,9 +106,9 @@ function nav() {
                     {user.role === 'customer' && <div><Link to="/user/history" className="dropdown-item">Dashboard</Link></div>}
                     {user.role === 'admin' && <div><Link to="/admin/dashboard" className="dropdown-item">Dashboard</Link></div>}
                     <div><li class="dropdown-item" onClick={logout}>Logout</li></div>
-                  </div> */}
-                {/* </li> */}
-              {/* )} */}
+                  </div> 
+                </li>
+               )} 
             </ul>
           </div>
         </div>
@@ -108,4 +122,4 @@ function nav() {
     )
 }
 
-export default nav
+export default Nav
