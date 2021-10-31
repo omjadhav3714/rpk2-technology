@@ -13,10 +13,18 @@ function Signup(){
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
+  const { user } = useSelector((state) => ({ ...state }));
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
   let history = useHistory();
+  useEffect(() => {
+    let intended = history.location.state;
+    if (intended) { return; }
+    else {
+      if (user && user.token) { history.push("/") }
+    }
+  }, [user, history]);
 
   let dispatch = useDispatch();
   const registerWithEmailAndPassword = async () => {

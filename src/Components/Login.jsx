@@ -24,10 +24,16 @@ const Login=()=>{
 
 
 
+  let history = useHistory();
   const { user } = useSelector((state) => ({ ...state }));
-  
+  useEffect(() => {
+    let intended = history.location.state;
+    if (intended) { return; }
+    else {
+      if (user && user.token) { history.push("/") }
+    }
+  }, [user, history]);
 let dispatch = useDispatch();
-let history = useHistory();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const signInWithGoogle = async () => {
@@ -50,6 +56,7 @@ const signInWithGoogle = async () => {
         console.log(error);
       });
   
+      
   
   // var obj=JSON.stringify(separatedString.role);
   // const ad= obj.localeCompare("admin")===0?"admin":"user";
