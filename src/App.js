@@ -8,6 +8,7 @@ const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
 const Home = lazy(() => import('./Components/Home'));
 const Contact = lazy(() => import('./Components/Contact/contact'));
+const About = lazy(() => import('./Components/About/about'));
 const Footer = lazy(() => import('./Components/Footer'));
 const AdminRoute =lazy(() => import('./routes/AdminRoute'));
 function App() {
@@ -65,6 +66,8 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       
       <AdminRoute exact path="/contact" component={Contact} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/contact" component={Contact} />
     </Switch>
 
   <Footer/>
