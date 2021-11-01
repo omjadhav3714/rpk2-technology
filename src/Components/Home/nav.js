@@ -104,7 +104,7 @@ const Nav=()=> {
                   </li>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {user.role === 'customer' && <div><Link to="/user/history" className="dropdown-item">Dashboard</Link></div>}
-                    {user.role === 'admin' && <div><Link to="/admin/dashboard" className="dropdown-item">Dashboard</Link></div>}
+                    {user.role === 'admin' && <div><Link to="/admin/additems" className="dropdown-item">Dashboard</Link></div>}
                     <div><li class="dropdown-item" onClick={logout}>Logout</li></div>
                   </div> 
                 </li>

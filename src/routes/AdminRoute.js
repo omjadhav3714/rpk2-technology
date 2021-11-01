@@ -25,9 +25,9 @@ var separatedString;
             }
            })
             .catch(err =>{
+                alert('admin access denied')
                 console.log(err);
                 setOk(false)
-                alert('admin access denied')
             })
         }
     },[user]);

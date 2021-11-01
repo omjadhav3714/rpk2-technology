@@ -71,7 +71,7 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       
       <AdminRoute exact path="/contact" component={Contact} />
-      <AdminRoute exact path="/admin/dashboard" component={Dashboard} />
+      {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
       <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
 
       <AdminRoute exact path="/admin/additems" component={Additems} />
