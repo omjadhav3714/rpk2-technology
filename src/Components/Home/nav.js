@@ -32,20 +32,20 @@ const Nav=()=> {
 
         <div class="contact-bnr-w3-agile">
           <ul>
-            <li id="ic"><i className="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@omkarcoolservices.com">info@omkarcoolservices.com</a></li>
+            <li id="ic"><i className="fa fa-envelope" aria-hidden="true"></i><a href="mailto:rpk2.vocalslocal@gmail.com">rpk2.vocalslocal@gmail.com</a></li>
             <li id="ic"><i className="fa fa-phone" aria-hidden="true"></i><a href="tel:+91-7021198075">+91-7021198075</a></li>
 
-            <li className="s-bar">
+            {/* <li className="s-bar">
               <div className="search">
                 <input className="search_box" type="checkbox" id="search_box" />
-                <label className="icon-search" for="search_box"><span class="fa fa-search" aria-hidden="true"></span></label>
+                <label className="icon-search" for="search_box"><span class="fa fa-search" aria-hidden="true"></span></label> */}
                 {/* <div className="search_form">
                   <form action="#" method="post">
                     <Search className="sea" />
                   </form>
                 </div> */}
-              </div>
-            </li>
+              {/* </div>
+            </li> */}
           </ul>
         </div>
         <div class="clearfix" style={{ backgroundColor: 'rgb(180 194 40)' }}></div>
@@ -76,18 +76,18 @@ const Nav=()=> {
               <li class="nav-item active">
                 <Link class="nav-link" to="/contact">Contact Us</Link>
               </li>
-              <li class="nav-item active">
+              {/* <li class="nav-item active">
                 <Link class="nav-link" to="/estimate-calculate">Get Estimation</Link>
-              </li>
+              </li> */}
               {/* {!user && ( */}
-                <li class="nav-item active">
+                {!user &&<li class="nav-item active">
                   <Link class="nav-link" to="/login">Login</Link>
-                </li>
+                </li>}
               {/* )} */}
               {/* {!user && ( */}
-                <li class="nav-item active">
+                {/* <li class="nav-item active">
                   <Link class="nav-link" to="/signup">Register</Link>
-                </li>
+                </li> */}
               {/* )} */}
               <li class="nav-item active pr-2">
                 {/* <Link class="nav-link" to="/cart">

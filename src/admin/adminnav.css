@@ -31,6 +31,10 @@
     .mobile{
         display: grid;
     }
+    .row{
+        overflow-x: auto !important;
+        
+    }
     .ord1{
         white-space: break-spaces;
     }

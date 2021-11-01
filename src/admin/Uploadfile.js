@@ -2,7 +2,9 @@ import React from 'react'
 import Resizer from 'react-image-file-resizer';
 import { useSelector } from 'react-redux';
 import { Avatar, Badge } from 'antd';
+import './adminnav.css';
 require("dotenv").config();
+
 // const cloudinary = require('cloudinary');
 const cloudinary = require('cloudinary/lib/cloudinary');
 cloudinary.config({

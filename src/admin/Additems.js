@@ -55,7 +55,7 @@ const handleSubmit = async(e) => {
           </div>
           <div className="col-md-10">
                     <br />
-                    {loading ? (<LoadingOutlined className="text-danger h1" />) : (<h4>Service Create</h4>)}
+                    {loading ? (<LoadingOutlined className="text-danger h1" />) : (<h4 className="heading">Service Create</h4>)}
                     <hr />
                     <div className="p-3">
                         <Uploadfile
