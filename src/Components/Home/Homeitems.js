@@ -10,7 +10,7 @@ function Homeitems() {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
-    const [servicesCount, setServicesCount] = useState(0);
+    // const [servicesCount, setServicesCount] = useState(0);
 
 
     useEffect(() => {

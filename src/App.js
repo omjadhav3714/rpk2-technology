@@ -19,6 +19,7 @@ const Contact = lazy(() => import('./Components/Contact/contact'));
 const About = lazy(() => import('./Components/About/about'));
 const Footer = lazy(() => import('./Components/Footer'));
 const AdminRoute =lazy(() => import('./routes/AdminRoute'));
+const Testimonial = lazy(() => import('./Components/testimonial/Testimonial'));
 function App() {
 
   const dispatch = useDispatch()
@@ -72,6 +73,8 @@ function App() {
     <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
+      <Route exact path="/testimonial" component={Testimonial} />
+
       
       <AdminRoute exact path="/contact" component={Contact} />
       {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
