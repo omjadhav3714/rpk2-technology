@@ -216,3 +216,19 @@
       font-size: 22px;
     }
   }
+
+  .ant-pagination {
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    font-feature-settings: "tnum","tnum";
+}
+.ant-pagination, .ant-pagination ol, .ant-pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+    gap: 1.7vw;
+}

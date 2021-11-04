@@ -1,12 +1,14 @@
 import React from "react";
 import Features from "./Features";
 import Home1 from "./Home/home";
+import Homeitems from "./Home/Homeitems";
 
 function Home(){
     return(
         <div>
             <Home1/>
-            <Features />
+            <Homeitems/>
+            {/* <Features /> */}
         </div>
     )
 }
