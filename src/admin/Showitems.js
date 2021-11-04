@@ -5,13 +5,15 @@ import { EyeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import Adminnav from './Adminnav';
 import laptop from "../Images/login.png";
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 import _ from "lodash";
 import { useDispatch } from "react-redux";
 
 import './Singlecard.css';
+import Itemdetail from '../Components/Home/Itemdetail';
 const { Meta } = Card;
 const Showitems=({ service, handleRemove })=> {
-  const { brand, description, images } = service;
+  const { brand, description, image } = service;
 
   const [tooltip, setTooltip] = useState("Click to add");
 
@@ -58,18 +60,20 @@ const Showitems=({ service, handleRemove })=> {
       cover={
         // eslint-disable-next-line jsx-a11y/alt-text
         <img
-          src={images && images.length ? images[0].url : laptop}
+          src={image && image.length ? image[0].url : laptop}
           style={{ maxHeight:"32vh",marginLeft:"auto",marginRight:"auto",padding:"5px", objectFit: "contain" }}
           className="p-1"
         />
       }
       
-      // actions={[
-      //   <Link to={`/admin/service/${slug}`}><EditOutlined className="text-warning" /></Link>,
+       actions={[
+         <Link to={`/itemdetail/${brand}`}><EyeOutlined style={{width: '100%',marginTop:'9px',height: '4vh',textAlign: 'center'}} className="text-warning" /><br /> <h3 style={{
+          fontSize:"18px",paddingBottom:"12px",textAlign: 'center'}}>View items</h3></Link>,
+          
       //   <DeleteOutlined onClick={() => handleRemove(slug)} className="text-danger" />,
-      // ]}
+       ]}
       >
-        <hr/>
+        {/* <hr/> */}
       <Meta
         title={brand}
         description={`${description && description.substring(0, 40)}...`}
