@@ -3,7 +3,7 @@ function footer(){
     return(  
     <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-    <div className="footer-newsletter">
+    {/* <div className="footer-newsletter">
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
@@ -17,7 +17,7 @@ function footer(){
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 
     <div className="footer-top">
       <div className="container">
@@ -58,13 +58,12 @@ function footer(){
           </div>
 
           <div className="col-lg-3 col-md-6 footer-info">
-            <h3>About Moderna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>Social Links</h3>
             <div className="social-links mt-3">
-              {/* <span className="twitter"><i className="bx bxl-twitter"></i></span>
-              <span className="facebook"><i className="bx bxl-facebook"></i></span>
-              <span className="instagram"><i className="bx bxl-instagram"></i></span>
-              <span className="linkedin"><i className="bx bxl-linkedin"></i></span> */}
+              <span className="icon"><i className="fa fa-twitter"></i></span>
+              <span className="icon ml-4"><i className="fa fa-facebook"></i></span>
+              <span className="icon ml-4"><i className="fa fa-instagram"></i></span>
+              <span className="icon ml-4"><i className="fa fa-linkedin"></i></span>
             </div>
           </div>
 

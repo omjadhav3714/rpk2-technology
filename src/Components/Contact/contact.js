@@ -13,7 +13,7 @@ const Contact = () => {
     await db.collection("contact").add({
         
       name: name,
-       email: email,
+      email: email,
       message: message,
     
   })

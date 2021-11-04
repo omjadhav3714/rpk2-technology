@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import Feature_section from "./Feature_section";
 
 function Features() {
+    
     return (
+
+        <>
         <section class="features">
             <div class="container">
                 <div>
@@ -23,6 +27,7 @@ function Features() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
 export default Features;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './about.css'
 
@@ -9,8 +10,9 @@ const about = () => {
   <section class="company-heading intro-type" id="parallax-one">
     <div class="container">
       <div class="row product-title-info">
-        <div class="col-md-12">
+        <div class="col-md-12">          
           <h1>ABOUT US</h1>
+          <div className="subheader">Security Products seller & service provider</div>        
         </div>
       </div>
     </div>
@@ -39,7 +41,7 @@ const about = () => {
       <div class="row ct-u-paddingBoth20">
         <div class="col-xs-6 col-md-4">
           <div class="company-icons-white">
-            <i class="fa fa-medkit" aria-hidden="true"></i>
+            <i class="fa fa-camera" aria-hidden="true"></i>
             <p>CCTV cameras</p>
             <p className="company-icons-subtext hidden-xs">Keep an eye on the activities.</p>
           </div>
@@ -99,7 +101,7 @@ const about = () => {
     </div>
   </section>
 </div>
-<main>
+{/* <main>
   <div class="container ct-u-paddingTop40 ct-u-paddingBottom100">
     <div class="row">
       <div class="col-md-12 ct-content">
@@ -190,7 +192,7 @@ const about = () => {
       </div>
     </div>
   </div>
-</main>
+</main> */}
 
         </>
     )
