@@ -339,6 +339,7 @@ label.icon-search span {
 
     ul.social-icons3 {
         margin-top: .6em;
+        display: none;
     }
 
     .contact-bnr-w3-agile ul li {
@@ -461,10 +462,10 @@ label.icon-search span {
         line-height: 1;
     }
 
-    #ic,
+    /* #ic,
     .social-bnr-agileits {
         display: none;
-    }
+    } */
 
     .navbar,
     .navbar-brand {

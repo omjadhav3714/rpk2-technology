@@ -27,6 +27,11 @@ const Adminnav=()=> {
                      Contact us
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link to="/admin/testimonial" className="nav-link">
+                     Testimonial
+                </Link>
+            </li>
 
             
             </ul>

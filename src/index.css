@@ -21,6 +21,16 @@ code {
   overflow: hidden;
   position: relative;
 }
+.carousel .thumb {
+  transition: border .15s ease-in;
+  display: inline-block;
+  margin-right: 6px;
+  display: inline-flex !important;
+  justify-content: center !important;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 3px solid #fff;padding: 2px;
+}
 #hero::after {
   content: "";
   position: absolute;

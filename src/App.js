@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router';
 
 import Itemdetail from "./Components/Home/Itemdetail";
 import Edititem from "./Components/Home/Edititem";
+import ReadTestimonial from "./Components/Home/ReadTestimonial";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 const Additems = lazy(() => import("./admin/Additems"));
 const Viewitems = lazy(() => import("./admin/Viewitem"));
@@ -16,7 +17,7 @@ const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
 const Home = lazy(() => import('./Components/Home'));
-const Contact = lazy(() => import('./Components/Contact/contact'));
+const Contact = lazy(() => import('./Components/Contact/Contact1'));
 const About = lazy(() => import('./Components/About/about'));
 const Footer = lazy(() => import('./Components/Footer'));
 const AdminRoute =lazy(() => import('./routes/AdminRoute'));
@@ -85,6 +86,7 @@ function App() {
       <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
       <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
       <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
+      <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />
       
       <Route exact path="/itemdetail/:id" component={Itemdetail} />
       <Route exact path="/about" component={About} />
