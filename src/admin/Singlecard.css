@@ -50,11 +50,11 @@ px
     background: #fff;
     border-top: 2px solid #f0f0f0!important;
 }
-svg:not(:root) {
+/* svg:not(:root) {
     overflow: hidden;
     color: cadetblue;
     font-size: 27px;
-}
+} */
 .tit2{
     font-family: "Comic Sans MS";
     color: #4e4d4d;
@@ -63,7 +63,25 @@ svg:not(:root) {
     text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
     font-weight: 600;
 }
-
+.custom{
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    color: #cf011c;
+    margin-top: -2vh;
+}
+.custom1{
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    color: #007cb4;
+}
+.cust2{
+    width: 100%;
+    margin-top:9px;
+    font-size: 28px;
+    text-align: center;
+}
 .ant-card {
     transition: .4s ease;
     border-radius: 6px!important;

@@ -5,6 +5,7 @@ import React, { useEffect,lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
 
 import Itemdetail from "./Components/Home/Itemdetail";
+import Edititem from "./Components/Home/Edititem";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 const Additems = lazy(() => import("./admin/Additems"));
 const Viewitems = lazy(() => import("./admin/Viewitem"));
@@ -80,6 +81,7 @@ function App() {
       <AdminRoute exact path="/admin/additems" component={Additems} />
       <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
       <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
+      <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
       
       <Route exact path="/itemdetail/:id" component={Itemdetail} />
       <Route exact path="/about" component={About} />

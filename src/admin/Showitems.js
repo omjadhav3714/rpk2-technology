@@ -108,11 +108,15 @@ const handleRemove = async () => {
       
        actions={[
          <>
-         <Link to={`/itemdetail/${brand}`}><EyeOutlined style={{width: '100%',marginTop:'9px',height: '4vh',textAlign: 'center'}} className="text-warning" /><br /> <h3 style={{
-          fontSize:"18px",paddingBottom:"12px",textAlign: 'center'}}>View items</h3></Link>
-          {user&&(user.role === 'admin' && <Button onClick={()=>{handleRemove(brand);console.log(brand)}} type="danger" className="mb-3" block shape="round" icon={<DeleteOutlined />} size="small">
+         <Link to={`/itemdetail/${brand}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
+          fontSize:"20px",textAlign: 'center'}}>View items</h3></Link>
+          {user&&(user.role === 'admin' && <Button onClick={()=>{handleRemove(brand);console.log(brand)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         
                         </Button>)}
+
+                        {user&&(user.role === 'admin' && <Link to={`/admin/edititem/${brand}`}><EditOutlined  type="primary" className="mb-3 custom1" block shape="round"  size="small"/></Link>
+                        
+ )}                        
           </>
       //   <DeleteOutlined onClick={() => handleRemove(slug)} className="text-danger" />,
        ]}
