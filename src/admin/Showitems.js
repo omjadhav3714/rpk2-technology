@@ -1,5 +1,7 @@
 
-import React, { useState } from 'react';
+import {DeleteOutlined ,EditOutlined } from '@ant-design/icons';
+import { useSelector } from 'react-redux';
+import React, { useState,useEffect } from 'react';
 import { Card } from 'antd';
 import { EyeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import Adminnav from './Adminnav';
@@ -8,13 +10,16 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import _ from "lodash";
 import { useDispatch } from "react-redux";
-
+import { Button } from 'antd';
 import './Singlecard.css';
-import Itemdetail from '../Components/Home/Itemdetail';
-const { Meta } = Card;
-const Showitems=({ service, handleRemove })=> {
-  const { brand, description, image } = service;
 
+
+import { db } from '../Firebase';
+const cloudinary = require('cloudinary/lib/cloudinary');
+const { Meta } = Card;
+const Showitems=({ service })=> {
+  const { brand, description, image } = service;
+  const { user } = useSelector((state) => ({ ...state }));
   const [tooltip, setTooltip] = useState("Click to add");
 
   const dispatch = useDispatch();
@@ -51,6 +56,41 @@ const Showitems=({ service, handleRemove })=> {
   //         });
   //     }
   // };
+  
+  
+const handleRemove = async () => {
+  if(window.confirm("Are you sure want to delete this item?")){
+    try{
+    await db.collection('items')
+    // .where('uid', '==', user.email)
+    .doc(brand)
+   .delete().then(()=>{
+     console.log("Image is here",image)
+     
+     image.map((image1)=>{
+      console.log("Image is here",image1.public_id)
+      var image_id = image1.public_id;
+      cloudinary.uploader.destroy(image_id, (err, result) => {
+          if (err) return 
+          // alert( err );
+          alert("ok");
+      })
+     })
+   
+    
+   })
+   .catch((error) => {
+    console.log(error);
+  });
+  window.location.reload()  
+    
+} catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+} 
+};
+
 
     return (
         <>
@@ -67,9 +107,13 @@ const Showitems=({ service, handleRemove })=> {
       }
       
        actions={[
+         <>
          <Link to={`/itemdetail/${brand}`}><EyeOutlined style={{width: '100%',marginTop:'9px',height: '4vh',textAlign: 'center'}} className="text-warning" /><br /> <h3 style={{
           fontSize:"18px",paddingBottom:"12px",textAlign: 'center'}}>View items</h3></Link>,
-          
+          {user&&(user.role === 'admin' && <Button onClick={()=>{handleRemove(brand);console.log(brand)}} type="danger" className="mb-3" block shape="round" icon={<DeleteOutlined />} size="small">
+                        
+                        </Button>)}
+          </>
       //   <DeleteOutlined onClick={() => handleRemove(slug)} className="text-danger" />,
        ]}
       >
