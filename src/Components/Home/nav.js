@@ -74,7 +74,7 @@ const Nav=()=> {
                 <Link class="nav-link" to="/allservices">All Services</Link>
               </li>
               <li class="nav-item active">
-                <Link class="nav-link" to="/contact">Contact Us</Link>
+                <Link class="nav-link" to="/contacts">Contact Us</Link>
               </li>
               {/* <li class="nav-item active">
                 <Link class="nav-link" to="/estimate-calculate">Get Estimation</Link>

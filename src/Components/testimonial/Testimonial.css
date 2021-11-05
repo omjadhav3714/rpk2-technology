@@ -24,9 +24,7 @@
 }
 
 .center .inputbox input, textarea{
-  position: absolute;
-  top: 0;
-  left: 0;
+  
   width: 100%;
   border: 2px solid #000;
   outline: none;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../Firebase';
 import './contact.css'
 
-const Contact = () => {
+const Contact1 = () => {
 
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -74,4 +74,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default Contact1

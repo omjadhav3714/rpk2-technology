@@ -17,7 +17,7 @@ const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
 const Home = lazy(() => import('./Components/Home'));
-const Contact = lazy(() => import('./Components/Contact/Contact1'));
+const Contact = lazy(() => import('./Components/Contact/Contacts'));
 const About = lazy(() => import('./Components/About/about'));
 const Footer = lazy(() => import('./Components/Footer'));
 const AdminRoute =lazy(() => import('./routes/AdminRoute'));
@@ -76,9 +76,9 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/testimonial" component={Testimonial} />
+      <Route exact path="/contacts" component={Contact} />
 
       
-      <AdminRoute exact path="/contact" component={Contact} />
       {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
       <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
 

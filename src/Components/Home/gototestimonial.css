@@ -60,7 +60,7 @@ font-family: 'EB Garamond', serif;
 	left: 22.8%;
 	
 }
-.btn {
+/* .btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
 	background:  #809fff;
@@ -77,7 +77,7 @@ font-family: 'EB Garamond', serif;
 }
 
 .btn:hover{transform: translateY(-6px);
-	background: #1a66ff;}
+	background: #1a66ff;} */
 
 .btn span {
 	font-family: 'Farsan', cursive;
