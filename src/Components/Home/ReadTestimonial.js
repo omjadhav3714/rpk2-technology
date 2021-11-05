@@ -17,12 +17,12 @@ const ReadTestimonial = () => {
         retrive();
       }, []);
 
-      const handleremove=async()=>{
+      const handleremove=async(nam2)=>{
         if(window.confirm("Are you sure want to delete this Testimonial?")){
             try{
             await db.collection('testimonialsend')
             // .where('uid', '==', user.email)
-            .doc(user.email)
+            .doc(nam2)
            .delete()
            .catch((error) => {
             console.log(error);
@@ -59,17 +59,17 @@ const ReadTestimonial = () => {
           }
     };
     
-    const handleSubmit=async()=>{
+    const handleSubmit=async(nam)=>{
         if(window.confirm("Verify Testimonial")){
         await db.collection('testimonialsend')
         // .where('uid', '==', user.email)
-        .doc(user.email)
+        .doc(nam)
        .get()
        .then(async doc => {
           if (doc && doc.exists) {
             var  separatedString = doc.data();
              //use separatedString
-             await db.collection("Approvetestimonial").doc(user.email).set({
+             await db.collection("Approvetestimonial").doc(separatedString.name).set({
           
                 name:separatedString.name,
                 testimonial:separatedString.testimonial,
@@ -106,10 +106,10 @@ const ReadTestimonial = () => {
                       <h5>{s.testimonial} </h5>
                     </div>
                   </figure>
-                  {user && (user.role === 'admin' && <Button onClick={() => { handleSubmit() }} type="primary" className="mb-3 custom" block shape="round" icon={<ArrowRightOutlined />} size="small">
+                  {user && (user.role === 'admin' && <Button onClick={() => { handleSubmit(s.name) }} type="primary" className="mb-3 custom" block shape="round" icon={<ArrowRightOutlined />} size="small">
 
                   </Button>)} &nbsp;&nbsp;&nbsp;&nbsp;
-                  {user && (user.role === 'admin' && <Button onClick={() => { handleremove() }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                  {user && (user.role === 'admin' && <Button onClick={() => { handleremove(s.name) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
 
                   </Button>)}
                 </div>

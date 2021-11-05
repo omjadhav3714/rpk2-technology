@@ -13,7 +13,7 @@ const Testimonial = () => {
   const handleSubmit = async(e) => {
       if(user){
     e.preventDefault();
-    await db.collection("testimonialsend").doc(user.email).set({
+    await db.collection("testimonialsend").doc(name).set({
           
     name:name,
     testimonial:testimonial,

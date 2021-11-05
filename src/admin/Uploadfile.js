@@ -113,7 +113,7 @@ const remove=async(public_id)=>{
             </div>
             <br/>
             <div className="row">
-                <label className="btn btn-primary btn-raised">Choose Files
+                <label style={{padding:"8px",borderRadius:"8px",transition:".4s ease all"}} className=" btn-primary btn-raised">Choose Files
                     <input
                         type="file"
                         hidden

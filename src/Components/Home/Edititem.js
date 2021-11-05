@@ -70,12 +70,13 @@ const retrive=async()=>{
             console.log(res);
             window.alert(`"${res.data.brand}" is created`);
             window.location.reload();
+            history.push("/");
         })
         .catch((err) => {
             console.log(err);
             alert("Item Updated")
             window.location.reload();
-            history.push("/");
+            
             // alert(err.response.data.err);
         });
   };

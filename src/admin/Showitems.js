@@ -18,45 +18,13 @@ import { db } from '../Firebase';
 const cloudinary = require('cloudinary/lib/cloudinary');
 const { Meta } = Card;
 const Showitems=({ service })=> {
+  
   const { brand, description, image } = service;
   const { user } = useSelector((state) => ({ ...state }));
   const [tooltip, setTooltip] = useState("Click to add");
 
   const dispatch = useDispatch();
 
-  // const handleAddToCart = () => {
-  //     // create cart array
-  //     let cart = [];
-  //     if (typeof window !== "undefined") {
-  //         // if cart is in local storage GET it
-  //         if (localStorage.getItem("cart")) {
-  //             cart = JSON.parse(localStorage.getItem("cart"));
-  //         }
-  //         // push new service to cart
-  //         cart.push({
-  //             ...s,
-  //             count: 1,
-  //         });
-  //         // remove duplicates
-  //         let unique = _.uniqWith(cart, _.isEqual);
-  //         // save to local storage
-  //         // console.log('unique', unique)
-  //         localStorage.setItem("cart", JSON.stringify(unique));
-  //         // show tooltip
-  //         setTooltip("Added");
-  //         //add to redux store
-  //         dispatch({
-  //             type: "ADD_TO_CART",
-  //             payload: unique,
-  //         })
-  //         //to display add to cart drawer
-  //         dispatch({
-  //             type: "SET_VISIBLE",
-  //             payload: true,
-  //         });
-  //     }
-  // };
-  
   
 const handleRemove = async () => {
   if(window.confirm("Are you sure want to delete this item?")){

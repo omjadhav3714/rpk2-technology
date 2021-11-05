@@ -28,7 +28,7 @@ const Edititemform = ({ handleSubmit, handleChange, values, setValues }) => {
                 <label>Price</label>
                 <input type="number" name="price" className="form-control" value={price} onChange={handleChange} />
             </div> */}
-            <button style={{marginTop: '15px',}} className="btn btn-outline-info">
+            <button style={{marginTop: '15px',borderRadius:"10px",transition:".4s ease all"}} className=" btn-outline-info">
                 Save
             </button>
             </form>
