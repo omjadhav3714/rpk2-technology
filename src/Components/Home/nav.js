@@ -21,7 +21,7 @@ const Nav=()=> {
            <div className="navt">
       {/* Top Header */}
 
-      <div class="banner-top" style={{ backgroundColor: 'whitesmoke' }}>
+      <div class="banner-top" style={{ backgroundColor: '#b4c228' }}>
         <div className="social-bnr-agileits">
           <ul className="social-icons3">
             <li><a href="https://www.facebook.com/" className="fa fa-facebook icon-border facebook"> </a></li>
@@ -70,9 +70,9 @@ const Nav=()=> {
               <li class="nav-item active">
                 <Link class="nav-link" to="/about">About</Link>
               </li>
-              <li class="nav-item active">
+              {/* <li class="nav-item active">
                 <Link class="nav-link" to="/allservices">All Services</Link>
-              </li>
+              </li> */}
               <li class="nav-item active">
                 <Link class="nav-link" to="/contacts">Contact Us</Link>
               </li>

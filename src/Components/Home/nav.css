@@ -58,11 +58,6 @@ label {
 
 /*-- header --*/
 /*--header -top--*/
-.social-bnr-agileits {
-    float: left;
-    margin-left: 1em;
-    margin-top: 8px;
-}
 
 /*--social-icons--*/
 ul.social-icons3 {
@@ -385,11 +380,11 @@ label.icon-search span {
 }
 
 @media(max-width:480px) {
-    .banner-top .social-bnr-agileits {
+    /* .banner-top .social-bnr-agileits {
         float: none;
         text-align: center;
         margin: 10px 0;
-    }
+    } */
 
     .search_form {
         top: 89px;
@@ -537,9 +532,9 @@ label.icon-search span {
         font-family: 'Federo', sans-serif;
     }
 
-    .banner-top .social-bnr-agileits {
+    /* .banner-top .social-bnr-agileits {
         margin: 15px 0 6px;
-    }
+    } */
 
     .textbox h4 {
         margin-top: 3.1em;
@@ -584,4 +579,12 @@ label.icon-search span {
         padding: 5.5px 15px;
         font-family: 'Federo', sans-serif;
     }
+}
+@media(min-width:900px){
+    .social-bnr-agileits {
+        float: left;
+        margin-left: 1em;
+        margin-top: 8px;
+    }
+    
 }

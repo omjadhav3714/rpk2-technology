@@ -4,6 +4,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -12,6 +14,17 @@ code {
     monospace;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(203 221 18);
+  border-radius: 50rem;
+
+}
 /*--------------------------------------------------------------
 # Navbar Section
 --------------------------------------------------------------*/
