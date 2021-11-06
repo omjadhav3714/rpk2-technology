@@ -7,6 +7,7 @@ const about = () => {
         <>
 
 <div class="ct-pageWrapper" id="ct-js-wrapper">
+  
   <section class="company-heading intro-type" id="parallax-one">
     <div class="container">
       <div class="row product-title-info">
@@ -18,6 +19,8 @@ const about = () => {
     </div>
     <div class="parallax" id="parallax-cta"></div>
   </section>
+  
+  
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
     <div class="container text-center">
       <h2>WHAT DRIVES US</h2>
