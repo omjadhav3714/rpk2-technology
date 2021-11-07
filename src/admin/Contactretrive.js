@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { ArrowRightOutlined, DeleteOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import './tables.css';  
 import Adminnav from './Adminnav';
 import { db } from "../Firebase";
@@ -7,7 +10,7 @@ function Contactretrive() {
     useEffect(() => {
       loadAllServices();
     }, []);
-  
+    const { user } = useSelector((state) => ({ ...state }));
   
     const loadAllServices = async() => {
       await db.collection('contact').get().then((querySnapshot) => {
@@ -21,6 +24,25 @@ function Contactretrive() {
           });
       })
       
+    };
+    const handleremove=async(nam2)=>{
+      if(window.confirm("Are you sure want to delete this Contact?")){
+          try{
+          await db.collection('contact')
+          // .where('uid', '==', user.email)
+          .doc(nam2)
+         .delete()
+         .catch((error) => {
+          console.log(error);
+        });
+        window.location.reload()  
+          
+      } catch (err) {
+          console.error(err);
+          alert(err.message);
+        }
+      } 
+
     };
     return (
         <>
@@ -47,8 +69,12 @@ function Contactretrive() {
                       <div class="col col1" data-label="Name">{s.name}</div>
                       <div class="col col2 " data-label="Gmail">{s.email}</div>
                       <div class="col col8" data-label="Message">{s.message}</div>
-                    </li>
+                      {user && (user.role === 'admin' && <Button onClick={() => { handleremove(s.name) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
 
+</Button>)}
+                    </li>
+                    
+                  
                   </>
                  ))} 
 
