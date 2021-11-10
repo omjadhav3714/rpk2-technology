@@ -1,4 +1,7 @@
-
+import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+import {DeleteOutlined ,EditOutlined } from '@ant-design/icons';
+import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { db } from "../Firebase";
 import './tables.css';
@@ -9,7 +12,7 @@ const Usersretrive=()=> {
     loadAllServices();
   }, []);
 
-
+  const { user } = useSelector((state) => ({ ...state }));
   const loadAllServices = async() => {
     await db.collection('users').get().then((querySnapshot) => {
              
@@ -48,6 +51,9 @@ const Usersretrive=()=> {
                       <div class="col col1" data-label="Name">{s.name}</div>
                       <div class="col col2 " data-label="Gmail">{s.email}</div>
                       <div class="col col8" data-label="Role">{s.role}</div>
+                      {user&&(user.role === 'admin' && <Link to={`/admin/changerole/${s.email}`}><EditOutlined  type="primary" className="mb-3 custom1" block shape="round"  size="small"/></Link>
+                        
+                        )}                        
                     </li>
 
                   </>

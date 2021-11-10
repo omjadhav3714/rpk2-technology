@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router';
 import Itemdetail from "./Components/Home/Itemdetail";
 import Edititem from "./Components/Home/Edititem";
 import ReadTestimonial from "./Components/Home/ReadTestimonial";
+import Changerole from "./admin/Changerole";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 const Additems = lazy(() => import("./admin/Additems"));
 const Viewitems = lazy(() => import("./admin/Viewitem"));
@@ -86,6 +87,7 @@ function App() {
       <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
       <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
       <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
+      <AdminRoute exact path="/admin/changerole/:id" component={Changerole} />
       <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />
       
       <Route exact path="/itemdetail/:id" component={Itemdetail} />
