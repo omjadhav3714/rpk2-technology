@@ -96,14 +96,14 @@ const Nav=()=> {
                   </Badge>
                 </Link> */}
               </li>
-
+            
               {user && (
                  <li class="nav-item active dropdown">
                   <li class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {user.email && user.email.split('@')[0]}
                   </li>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {user.role === 'customer' && <div><Link to="/user/history" className="dropdown-item">Dashboard</Link></div>}
+                    {user.role === 'client' && <div><Link to="/client/clientnav" className="dropdown-item">Dashboard</Link></div>}
                     {user.role === 'admin' && <div><Link to="/admin/additems" className="dropdown-item">Dashboard</Link></div>}
                     <div><li class="dropdown-item" onClick={logout}>Logout</li></div>
                   </div> 

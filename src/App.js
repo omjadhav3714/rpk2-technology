@@ -8,12 +8,19 @@ import Itemdetail from "./Components/Home/Itemdetail";
 import Edititem from "./Components/Home/Edititem";
 import ReadTestimonial from "./Components/Home/ReadTestimonial";
 import Changerole from "./admin/Changerole";
+import Addcomplaient from "./admin/client/complaient/Addcomplaient";
+import ClientRoute from "./routes/ClientRoute";
+import Compdetail from "./admin/client/complaient/Compdetail";
+
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
+
+const Complaientview = lazy(() => import("./admin/client/complaient/Complaientview"));
+const Clientnav = lazy(() => import("./admin/client/complaient/Clientnav"));
 const Additems = lazy(() => import("./admin/Additems"));
 const Viewitems = lazy(() => import("./admin/Viewitem"));
 const Contactretrive = lazy(() => import("./admin/Contactretrive"));
 const Usersretrive = lazy(() => import('./admin/Usersretrives'));
-const Dashboard = lazy(() => import('./admin/dashboard'));
+
 const Login = lazy(() => import('./Components/Login'));
 const Signup = lazy(() => import('./Components/Signup'));
 const Navbar = lazy(() => import('./Components/Home/nav'));
@@ -89,6 +96,10 @@ function App() {
       <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
       <AdminRoute exact path="/admin/changerole/:id" component={Changerole} />
       <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />
+      <ClientRoute exact path="/client/clientnav" component={Clientnav} />
+      <ClientRoute exact path="/client/addcomplaient" component={Addcomplaient} />
+      <ClientRoute exact path="/client/viewcomplaient" component={Complaientview} />
+      <ClientRoute exact path="/client/viewdetailcom/:id" component={Compdetail} />
       
       <Route exact path="/itemdetail/:id" component={Itemdetail} />
       <Route exact path="/about" component={About} />
