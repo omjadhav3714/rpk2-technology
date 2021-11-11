@@ -1,4 +1,4 @@
-
+import firebase from 'firebase/compat/app';
 import {DeleteOutlined ,EditOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import React, { useState,useEffect } from 'react';
@@ -19,7 +19,7 @@ import { db } from '../../Firebase';
 
 const cloudinary = require('cloudinary/lib/cloudinary');
 const { Meta } = Card;
-const Complaientcard=({ service })=> {
+const Complaientcard=({ service,co })=> {
   
   const { brand, description, image,email } = service;
   const { user } = useSelector((state) => ({ ...state }));
@@ -34,7 +34,9 @@ const handleRemove = async (email) => {
     await db.collection('complaient')
     // .where('uid', '==', user.email)
     .doc(email)
-   .delete().then(()=>{
+    .update({
+        "comp": firebase.firestore.FieldValue.arrayRemove(co[co.indexOf(service)])
+      }).then(()=>{
     //  console.log("Image is here",image)
      
      image.map((image1)=>{
@@ -78,7 +80,7 @@ const handleRemove = async (email) => {
       
        actions={[
          <>
-         <Link to={`/admin/viewuserdet/${email}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
+         <Link to={`/admin/viewuserdet/${brand}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
           fontSize:"20px",textAlign: 'center'}}>View items</h3></Link>
           {user&&(user.role === 'admin' && <Button onClick={()=>{handleRemove(email)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         

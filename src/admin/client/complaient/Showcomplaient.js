@@ -1,4 +1,4 @@
-
+import firebase from 'firebase/compat/app';
 import {DeleteOutlined ,EditOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import React, { useState,useEffect } from 'react';
@@ -18,7 +18,7 @@ import { db } from '../../../Firebase';
 
 const cloudinary = require('cloudinary/lib/cloudinary');
 const { Meta } = Card;
-const Showcomplaient=({ service })=> {
+const Showcomplaient=({ service,co })=> {
   
   const { brand, description, image } = service;
   const { user } = useSelector((state) => ({ ...state }));
@@ -28,12 +28,15 @@ const Showcomplaient=({ service })=> {
 
   
 const handleRemove = async () => {
+  
   if(window.confirm("Are you sure want to delete this Complaient?")){
     try{
     await db.collection('complaient')
     // .where('uid', '==', user.email)
     .doc(user.email)
-   .delete().then(()=>{
+    .update({
+      "comp": firebase.firestore.FieldValue.arrayRemove(co[co.indexOf(service)])
+    }).then(()=>{
     //  console.log("Image is here",image)
      
      image.map((image1)=>{
@@ -64,8 +67,8 @@ const handleRemove = async () => {
     return (
         <>
        
-
-          <Card
+       
+          <Card 
       cover={
         // eslint-disable-next-line jsx-a11y/alt-text
         <img
@@ -77,9 +80,9 @@ const handleRemove = async () => {
       
        actions={[
          <>
-         <Link to={`/client/viewdetailcom/${user.email}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
+         <Link to={`/client/viewdetailcom/${brand}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
           fontSize:"20px",textAlign: 'center'}}>View items</h3></Link>
-          {user&&(user.role === 'client' && <Button onClick={()=>{handleRemove(brand);console.log(brand)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+          {user&&(user.role === 'client' && <Button onClick={()=>{handleRemove();console.log(brand)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         
                         </Button>)}
 
@@ -96,6 +99,7 @@ const handleRemove = async () => {
         description={`${description && description.substring(0, 40)}...`}
       />
     </Card>
+          
           
         </>
     )

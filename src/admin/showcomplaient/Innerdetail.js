@@ -21,14 +21,13 @@ function Innerdetail() {
         try{
         await db.collection('complaient')
         // .where('uid', '==', user.email)
-        .doc(id)
+        
        .get()
-       .then(doc => {
-          if (doc && doc.exists) {
-             setService( doc.data());
-              console.log("This is doc",doc.data())
-             //use separatedString
-          }
+       .then(querySnapshot => {
+        querySnapshot.forEach(element => {
+            var data = element.data();
+            setService(arr => [...arr , data]);
+        });
        })
        .catch((error) => {
         console.log(error);
@@ -48,12 +47,16 @@ function Innerdetail() {
     const { user } = useSelector((state) => ({ ...state }));
     return (
         <>
-        <div className="row pt-4">
+         {item.map((p) => (
+             <div key={p.brand} >
+             {p.comp.map((h) => (
+          (h.brand==id)?     
+        <div className="row pt-4" key={h.name}>
         <div className="col-md-7">
-                {image && image.length ? (
+                {h.image && h.image.length ? (
                     <Carousel  autoPlay infiniteLoop showArrows={false}
                     showStatus={false}>
-                        {image && image.map((i) => <img src={i.url} key={i.public_id} alt="" style={{maxWidth:"50%"}}/>)}
+                        {h.image && h.image.map((i) => <img src={i.url} key={i.public_id} alt="" style={{maxWidth:"50%"}}/>)}
                     </Carousel>
                 ) : (
                     <Card cover={<img src={laptop} className="mb-3 card-image" alt="" />}></Card>
@@ -72,10 +75,16 @@ function Innerdetail() {
             </div>
             <div className="col-md-5">
             <Card >
-                        <Innerdesc item1={item} />
+                        <Innerdesc item1={h} />
                     </Card>
                     </div>
                     </div>
+                                       :console.log("not there")
+                            
+                                       ))}
+                                       </div>
+                  ))}
+                    
         </>
     )
 }

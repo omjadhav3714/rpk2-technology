@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,createContext } from 'react'
 import { db } from '../../../Firebase';
 import Clientnav from './Clientnav'
 import Showcomplaient from './Showcomplaient'
+
 
 const Complaientview = () => {
     const [services, setServices] = useState([]);
@@ -32,6 +33,7 @@ const Complaientview = () => {
       if (doc && doc.exists) {
         
             setServices(arr => [...arr , doc.data()]);
+            console.log("this is der",services)
        //use separatedString
     }  
       // querySnapshot.forEach(element => {
@@ -50,12 +52,24 @@ const Complaientview = () => {
           </div>
           <div className="col">
             {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet</h4>)}
-            <div className="row">{services.map((p) => (
-              <div className="col-md-4 pb-3" key={p.brand}>
-                <Showcomplaient service={p}  />
+            
+            <div className="row">
+              {services.map((p) => (
+
+              <div style={{gap:"2vw" ,display:"flex",flexWrap:"wrap",justifyContent:"center"}} className="md-4 pb-3" key={p.brand}>
+                {p.comp.map((h) => (
+                  <div key={h.name}>
+                     
+                <Showcomplaient service={h} co={p.comp}  />
+                
+                 {console.log("this is p",p.comp)}
+                 {console.log("this is p",h._id)}
+                </div>
+                ))}
               </div>
             ))}
             </div>
+            
           </div>
 
         </div>
@@ -65,3 +79,4 @@ const Complaientview = () => {
 }
 
 export default Complaientview
+

@@ -1,3 +1,4 @@
+
 import Clientnav from './Clientnav'
 import { Link,useHistory } from 'react-router-dom';
 import { LoadingOutlined } from '@ant-design/icons';
@@ -30,16 +31,26 @@ const Addcomplaient = () => {
   
   const handleSubmit = async(e) => {
     e.preventDefault();
-    
-    await db.collection("complaient").doc(user.email).set({
+    var arr={
+      
         brand: values.brands,
        description: values.description,
       image:values.images,    
       email:user.email,
       name:user.name
+    }
+    await db.collection("complaient").doc(user.email).set({
+      "comp":firebase.firestore.FieldValue.arrayUnion(arr),
       
-      
-    })
+      //   brand: values.brands,
+      //  description: values.description,
+      // image:values.images,    
+      // email:user.email,
+      // name:user.name
+    
+    },
+    { merge: true }
+    )
         .then((res) => {
             console.log(res);
             window.alert(`"${res.data.brands}" is created`);
