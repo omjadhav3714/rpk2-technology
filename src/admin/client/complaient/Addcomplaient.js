@@ -35,6 +35,8 @@ const Addcomplaient = () => {
         brand: values.brands,
        description: values.description,
       image:values.images,    
+      email:user.email,
+      name:user.name
       
       
     })

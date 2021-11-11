@@ -11,6 +11,9 @@ import Changerole from "./admin/Changerole";
 import Addcomplaient from "./admin/client/complaient/Addcomplaient";
 import ClientRoute from "./routes/ClientRoute";
 import Compdetail from "./admin/client/complaient/Compdetail";
+import Showcomplaient from "./admin/showcomplaient/Showcomplaient";
+import Showclientcomplaient from "./admin/showcomplaient/Showcomplaient";
+import Innerdetail from "./admin/showcomplaient/Innerdetail";
 
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
@@ -95,6 +98,10 @@ function App() {
       <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
       <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
       <AdminRoute exact path="/admin/changerole/:id" component={Changerole} />
+      <AdminRoute exact path="/admin/complaient" component={Showclientcomplaient} />
+      <AdminRoute exact path="/admin/viewuserdet/:id" component={Innerdetail} />
+      
+
       <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />
       <ClientRoute exact path="/client/clientnav" component={Clientnav} />
       <ClientRoute exact path="/client/addcomplaient" component={Addcomplaient} />

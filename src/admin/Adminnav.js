@@ -32,6 +32,11 @@ const Adminnav=()=> {
                      Testimonial
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link to="/admin/complaient" className="nav-link">
+                     View Complaient
+                </Link>
+            </li>
 
             
             </ul>

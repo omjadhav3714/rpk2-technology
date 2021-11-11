@@ -1,10 +1,13 @@
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react'
-import { db } from '../../../Firebase';
-import Clientnav from './Clientnav'
-import Showcomplaient from './Showcomplaient'
 
-const Complaientview = () => {
+
+import Showcomplaient from './Showcomplaient'
+import Complaientcard from './Complaientcard';
+import Adminnav from '../Adminnav';
+import { db } from '../../Firebase';
+
+const Showclientcomplaient = () => {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
@@ -24,20 +27,16 @@ const Complaientview = () => {
     const loadAllServices = async() => {
         setLoading(true);
         // getServices("price", "desc", page)
-   const items=     await db.collection('complaient').doc(user.email)
+   const items=     await db.collection('complaient')
     // .where('uid', '==', user.email)
     // .doc()
    .get()
-     .then(doc => {
-      if (doc && doc.exists) {
-        
-            setServices(arr => [...arr , doc.data()]);
-       //use separatedString
-    }  
-      // querySnapshot.forEach(element => {
-      //       var data = element.data();
-      //       setServices(arr => [...arr , data]);
-      //   });
+     .then(querySnapshot => {
+    
+      querySnapshot.forEach(element => {
+            var data = element.data();
+            setServices(arr => [...arr , data]);
+        });
         setLoading(false);
             });
     };
@@ -46,13 +45,13 @@ const Complaientview = () => {
         <>
         <div className="row">
           <div className="col-md-2">
-            <Clientnav />
+            <Adminnav />
           </div>
           <div className="col">
-            {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet</h4>)}
+            {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet's</h4>)}
             <div className="row">{services.map((p) => (
-              <div className="col-md-4 pb-3" key={p.brand}>
-                <Showcomplaient service={p}  />
+              <div className="col-md-4 pb-3" key={p.name}>
+                <Complaientcard service={p}  />
               </div>
             ))}
             </div>
@@ -64,4 +63,4 @@ const Complaientview = () => {
     )
 }
 
-export default Complaientview
+export default Showclientcomplaient

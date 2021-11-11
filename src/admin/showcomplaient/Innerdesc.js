@@ -1,9 +1,9 @@
 
 import React from 'react'
 import { Link } from "react-router-dom";
-import '../../Singlecard.css';
+import '../../admin/Singlecard.css';
 
-function Compcarddetail({ item1 }) {
+function Innerdesc({ item1 }) {
     // const {
     //     brand,
     //     description,
@@ -16,18 +16,17 @@ function Compcarddetail({ item1 }) {
         <div>
         <ul className="list-group">
         <li className="list-group-item">
-                Email:&nbsp; {" "}
-                <span className="label label-default label-pill pull-xs-left">
-                    <b> {item1.email}</b>
-                </span>
-            </li>
-            <li className="list-group-item">
                 Name:&nbsp; {" "}
                 <span className="label label-default label-pill pull-xs-left">
                     <b> {item1.name}</b>
                 </span>
             </li>
-            
+        <li className="list-group-item">
+                Email:&nbsp; {" "}
+                <span className="label label-default label-pill pull-xs-left">
+                    <b> {item1.email}</b>
+                </span>
+            </li>
             <li className="list-group-item">
                 Brand:&nbsp; {" "}
                 <span className="label label-default label-pill pull-xs-left">
@@ -50,4 +49,4 @@ function Compcarddetail({ item1 }) {
     )
 }
 
-export default Compcarddetail
+export default Innerdesc
