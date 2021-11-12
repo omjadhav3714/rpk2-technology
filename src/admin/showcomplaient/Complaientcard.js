@@ -21,7 +21,7 @@ const cloudinary = require('cloudinary/lib/cloudinary');
 const { Meta } = Card;
 const Complaientcard=({ service,co })=> {
   
-  const { brand, description, image,email } = service;
+  const { brand, description, image,email,c_id } = service;
   const { user } = useSelector((state) => ({ ...state }));
   const [tooltip, setTooltip] = useState("Click to add");
 
@@ -80,7 +80,7 @@ const handleRemove = async (email) => {
       
        actions={[
          <>
-         <Link to={`/admin/viewuserdet/${brand}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
+         <Link to={`/admin/viewuserdet/${c_id}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
           fontSize:"20px",textAlign: 'center'}}>View items</h3></Link>
           {user&&(user.role === 'admin' && <Button onClick={()=>{handleRemove(email)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         

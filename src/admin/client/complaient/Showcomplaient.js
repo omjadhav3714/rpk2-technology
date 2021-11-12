@@ -20,7 +20,7 @@ const cloudinary = require('cloudinary/lib/cloudinary');
 const { Meta } = Card;
 const Showcomplaient=({ service,co })=> {
   
-  const { brand, description, image } = service;
+  const { brand, description, image,c_id } = service;
   const { user } = useSelector((state) => ({ ...state }));
   const [tooltip, setTooltip] = useState("Click to add");
 
@@ -80,7 +80,7 @@ const handleRemove = async () => {
       
        actions={[
          <>
-         <Link to={`/client/viewdetailcom/${brand}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
+         <Link to={`/client/viewdetailcom/${c_id}`}><EyeOutlined className="cust2" /><br /> <h3 style={{
           fontSize:"20px",textAlign: 'center'}}>View items</h3></Link>
           {user&&(user.role === 'client' && <Button onClick={()=>{handleRemove();console.log(brand)}} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         

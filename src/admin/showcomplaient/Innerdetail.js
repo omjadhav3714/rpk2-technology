@@ -48,9 +48,9 @@ function Innerdetail() {
     return (
         <>
          {item.map((p) => (
-             <div key={p.brand} >
+             <div key={p.rand} >
              {p.comp.map((h) => (
-          (h.brand==id)?     
+          (h.c_id==id)?     
         <div className="row pt-4" key={h.name}>
         <div className="col-md-7">
                 {h.image && h.image.length ? (

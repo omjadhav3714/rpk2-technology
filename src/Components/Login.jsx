@@ -123,12 +123,12 @@ const signInWithEmailAndPassword = async () => {
       });
       var obj=JSON.stringify(separatedString.role);
       console.log("obj us hee",obj)
-      const ad="";
+      
       
      
       
 
-      console.log("ad is here",ad)
+      
      
     await auth.signInWithEmailAndPassword(email, password).then((res) => {
       

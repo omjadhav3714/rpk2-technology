@@ -31,13 +31,17 @@ const Addcomplaient = () => {
   
   const handleSubmit = async(e) => {
     e.preventDefault();
+    const min = 1;
+    const max = 100000000000;
+    const rand = min + Math.random() * (max - min);
     var arr={
       
         brand: values.brands,
        description: values.description,
       image:values.images,    
       email:user.email,
-      name:user.name
+      name:user.name,
+      c_id:parseInt(rand),
     }
     await db.collection("complaient").doc(user.email).set({
       "comp":firebase.firestore.FieldValue.arrayUnion(arr),
