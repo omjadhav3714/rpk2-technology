@@ -14,6 +14,7 @@ import Compdetail from "./admin/client/complaient/Compdetail";
 import Showcomplaient from "./admin/showcomplaient/Showcomplaient";
 import Showclientcomplaient from "./admin/showcomplaient/Showcomplaient";
 import Innerdetail from "./admin/showcomplaient/Innerdetail";
+import Editdecesion from "./admin/showcomplaient/Editdecesion";
 
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
@@ -100,6 +101,7 @@ function App() {
       <AdminRoute exact path="/admin/changerole/:id" component={Changerole} />
       <AdminRoute exact path="/admin/complaient" component={Showclientcomplaient} />
       <AdminRoute exact path="/admin/viewuserdet/:id" component={Innerdetail} />
+      <AdminRoute exact path="/admin/changedecesion/:id" component={Editdecesion} />
       
 
       <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />

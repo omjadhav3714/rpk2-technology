@@ -26,6 +26,7 @@ const Changerole = () => {
       let history = useHistory();
     const retrive=async()=>{
         try{
+          console.log(",id  is  here",(id))
             await db.collection('users')
             // .where('uid', '==', user.email)
             .doc(id)

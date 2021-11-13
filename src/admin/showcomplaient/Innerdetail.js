@@ -13,7 +13,7 @@ function Innerdetail() {
     const {id}=useParams();
     
         const [item, setService] = useState([]);
-
+        const [det, setdet] = useState([]);
     useEffect(() => {
         retrive();
       }, []);
@@ -27,6 +27,11 @@ function Innerdetail() {
         querySnapshot.forEach(element => {
             var data = element.data();
             setService(arr => [...arr , data]);
+        });
+        db.collection("compdetail").doc(id)
+        .get().then((doc) => {
+            setdet( doc.data());
+            console.log("Current data: ", det.price);
         });
        })
        .catch((error) => {
@@ -75,7 +80,8 @@ function Innerdetail() {
             </div>
             <div className="col-md-5">
             <Card >
-                        <Innerdesc item1={h} />
+                   
+                        <Innerdesc item1={h} det={det}/>
                     </Card>
                     </div>
                     </div>

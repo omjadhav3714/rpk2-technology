@@ -23,6 +23,7 @@ const initialState = {
 const Addcomplaient = () => {
     const { user } = useSelector((state) => ({ ...state }));
     const [loading, setLoading] = useState(false);
+    const setval=true;
   const [values, setValues] = useState(initialState);
   let history = useHistory();
   const handleChange = (e) => {
@@ -30,10 +31,13 @@ const Addcomplaient = () => {
   };
   
   const handleSubmit = async(e) => {
+    
     e.preventDefault();
     const min = 1;
     const max = 100000000000;
     const rand = min + Math.random() * (max - min);
+    var price=0;
+    var num=  parseInt(rand);
     var arr={
       
         brand: values.brands,
@@ -42,8 +46,13 @@ const Addcomplaient = () => {
       email:user.email,
       name:user.name,
       c_id:parseInt(rand),
+      // price:price,
+      // decision:'disagree',
+      //   status:'not viwed',
+
     }
-    await db.collection("complaient").doc(user.email).set({
+
+     await db.collection("complaient").doc(user.email).set({
       "comp":firebase.firestore.FieldValue.arrayUnion(arr),
       
       //   brand: values.brands,
@@ -53,19 +62,29 @@ const Addcomplaient = () => {
       // name:user.name
     
     },
+    
     { merge: true }
-    )
-        .then((res) => {
-            console.log(res);
-            window.alert(`"${res.data.brands}" is created`);
-            window.location.reload();
-        })
-        .catch((err) => {
-            console.log(err);
+    
+    // set(true)
+    ).then(async doc => {
+        
+        
+            // window.alert(`"${res.data.brands}" is created`);
+            await db.collection("compdetail").doc(num.toString()).set({
+              c_id:parseInt(rand),
+              price:price,
+              decision:'disagree',
+              status:'not viwed',
+              
+            })
+          
             alert("Complainet added")
             window.location.reload();
-            // alert(err.response.data.err);
-        });
+        
+          })
+          
+          
+  
   };
     return (
         <>

@@ -1,3 +1,4 @@
+
 import laptop from "../../../Images/login.png";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState,useEffect } from 'react';
@@ -11,11 +12,25 @@ import Compcarddetail from "./Compcarddetail";
 import { db } from "../../../Firebase";
 
 const { TabPane } = Tabs;
-
+// const initialState = {
+//     brand: '',
+//     c_id:'',
+//     decision:'',
+    
+//     description: '',  
+//     email:'',
+//     images: [],
+    
+//     name:'',
+//     price:'',
+//     status:'',
+//   };
+  
 function Compdetail() {
     const {id}=useParams();
     
         const [item, setService] = useState([]);
+        const [det, setdet] = useState([]);
 
     useEffect(() => {
         retrive();
@@ -26,11 +41,15 @@ function Compdetail() {
         // .where('uid', '==', user.email)
         .doc(user.email)
        .get()
-       .then(doc => {
+       .then(async doc => {
           if (doc && doc.exists) {
             setService(arr => [...arr , doc.data()]);
-            
-              console.log("This is doc",doc.data())
+            db.collection("compdetail").doc(id)
+            .get().then((doc) => {
+                setdet( doc.data());
+                console.log("Current data: ", det.price);
+            });
+              console.log("This is doc",det.price)
              //use separatedString
           }
        })
@@ -44,16 +63,18 @@ function Compdetail() {
         alert(err.message);
       }
     };
+    
 
     
-    const {  description, image } = item;
+    // const {  description, image } = item;
    
    
     const { user } = useSelector((state) => ({ ...state }));
     return (
         <>
+        {console.log("this is item",item)}
          {item.map((p) => (
-             <div key={p.rand}>
+             <div key={p.c_id}>
              {p.comp.map((h) => (
           (h.c_id==id)?     
          <div className="row pt-4" key={h.name}>
@@ -80,7 +101,9 @@ function Compdetail() {
                     </div>
                     <div className="col-md-5">
                     <Card >
-                                <Compcarddetail item1={h} />
+                    {/* {det.map((m) => ( */}
+                                <Compcarddetail item1={h} id={id}  det={det} />
+                                {/* ))} */}
                             </Card>
                             </div>
                             </div>
