@@ -154,7 +154,7 @@ ul.social-icons3 {
 }
 
 .contact-bnr-w3-agile ul li a {
-    color: #101010;
+    color: whitesmoke;
     text-decoration: none;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -167,7 +167,7 @@ ul.social-icons3 {
 }
 
 .contact-bnr-w3-agile ul li a:hover {
-    color: #0066b2;
+    color: #98aae3;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -176,7 +176,7 @@ ul.social-icons3 {
 }
 
 .contact-bnr-w3-agile ul li i {
-    color: #000000;
+    color: #98aae3;
     font-size: 16px;
 }
 
@@ -294,7 +294,7 @@ label.icon-search span {
 
 
 .log1 {
-    max-width: 80%;
+    max-width: 72%;
     vertical-align: middle;
     height: auto;
     border-radius: 10px;
