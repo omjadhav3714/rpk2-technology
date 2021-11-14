@@ -55,15 +55,15 @@ const Nav=()=> {
       {/* Navbar  */}
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div style={{display: 'inline-flex',flexWrap:"nowrap",
-    flexDirection: 'row',}} className="container">
+        <div  className="container">
           <Link class="navbar-brand" to="/"><img alt="" className="log1" src={logo} /></Link>
           {/* <h2>Secutity web</h2> */}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          </div>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
 
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item active">
@@ -113,7 +113,7 @@ const Nav=()=> {
                )} 
             </ul>
           </div>
-        </div>
+        
       </nav>
 
       {/* navbar end */}

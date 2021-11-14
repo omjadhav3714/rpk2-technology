@@ -439,6 +439,13 @@ label.icon-search span {
     .contact-bnr-w3-agile ul li {
         padding: 10px 9px;
     }
+    .container{
+        display: flex;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .navbar-dark .navbar-toggler-icon {
         background-image: url('../../Images//navbar.png');
