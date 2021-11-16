@@ -1,6 +1,6 @@
+/* eslint-disable no-loop-func */
 import React from 'react'
 import Resizer from 'react-image-file-resizer';
-import { useSelector } from 'react-redux';
 import { Avatar, Badge } from 'antd';
 import '../../adminnav.css';
 require("dotenv").config();
@@ -39,7 +39,6 @@ const remove=async(public_id)=>{
         alert("ok");
     })
 }
-    const { user } = useSelector((state) => ({ ...state }));
 
     const fileUploadAndResize = (e) => {
         let files = e.target.files;

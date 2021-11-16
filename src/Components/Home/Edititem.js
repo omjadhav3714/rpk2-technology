@@ -1,14 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from "react-router";
-import { Link,useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import Adminnav from './../../admin/Adminnav';
 import './../../admin/tables.css';
 import './../../admin/adminnav.css';
 import { db } from "../../Firebase";
-// import Itemserviceform from './Itemserviceform';
-import Uploadfile from './../../admin/Uploadfile';
 import Edititemform from './Edititemform';
 import Uploadedit from "./Uplaodedit";
 const initialState = {
@@ -21,7 +19,6 @@ const initialState = {
 
 const Edititem = () => {
     const {id}=useParams();
-    const { user } = useSelector((state) => ({ ...state }));
     const [loading, setLoading] = useState(false);
   const [values, setValues] = useState(initialState);
   let history = useHistory();
@@ -32,6 +29,7 @@ const Edititem = () => {
   useEffect(() => {
     retrive();
   }, []);
+  
 const retrive=async()=>{
     try{
         await db.collection('items')

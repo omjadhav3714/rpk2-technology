@@ -37,7 +37,11 @@ const Adminnav=()=> {
                      View Complaient
                 </Link>
             </li>
-
+            <li className="nav-item">
+                <Link to="/admin/savedpasswords" className="nav-link">
+                     View Passwords
+                </Link>
+            </li>
             
             </ul>
             </nav>
