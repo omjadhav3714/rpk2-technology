@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import './App.css';
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
+// eslint-disable-next-line
+import { useSelector } from "react-redux";
 
 import Itemdetail from "./Components/Home/Itemdetail";
 import Edititem from "./Components/Home/Edititem";
@@ -21,41 +23,42 @@ import ViewAllPasswords from "./admin/client/passwords/ViewAllPasswords";
 import EditPassword from "./admin/client/passwords/EditPassword";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
-const Complaientview = lazy(() => import("./admin/client/complaient/Complaientview"));
+const Complaientview = lazy(() =>
+  import("./admin/client/complaient/Complaientview")
+);
 const Clientnav = lazy(() => import("./admin/client/complaient/Clientnav"));
 const Additems = lazy(() => import("./admin/Additems"));
 const Viewitems = lazy(() => import("./admin/Viewitem"));
 const Contactretrive = lazy(() => import("./admin/Contactretrive"));
-const Usersretrive = lazy(() => import('./admin/Usersretrives'));
+const Usersretrive = lazy(() => import("./admin/Usersretrives"));
 
-const Login = lazy(() => import('./Components/Login'));
-const Signup = lazy(() => import('./Components/Signup'));
-const Navbar = lazy(() => import('./Components/Home/nav'));
-const Home = lazy(() => import('./Components/Home'));
-const Contact = lazy(() => import('./Components/Contact/Contacts'));
-const About = lazy(() => import('./Components/About/about'));
-const Footer = lazy(() => import('./Components/Footer'));
-const AdminRoute = lazy(() => import('./routes/AdminRoute'));
-const Testimonial = lazy(() => import('./Components/testimonial/Testimonial'));
+const Login = lazy(() => import("./Components/Login"));
+const Signup = lazy(() => import("./Components/Signup"));
+const Navbar = lazy(() => import("./Components/Home/nav"));
+const Home = lazy(() => import("./Components/Home"));
+const Contact = lazy(() => import("./Components/Contact/Contacts"));
+const About = lazy(() => import("./Components/About/about"));
+const Footer = lazy(() => import("./Components/Footer"));
+const AdminRoute = lazy(() => import("./routes/AdminRoute"));
+const Testimonial = lazy(() => import("./Components/testimonial/Testimonial"));
 function App() {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   var separatedString1;
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        const idTokenResult = await user.getIdTokenResult()
-        await db.collection('users')
+        const idTokenResult = await user.getIdTokenResult();
+        await db
+          .collection("users")
           // .where('uid', '==', user.email)
           .doc(user.email)
           .get()
-          .then(doc => {
+          .then((doc) => {
             if (doc && doc.exists) {
               separatedString1 = doc.data();
+              console.log("hello data", doc.data());
               //use separatedString1
             }
-          }).catch((error) => {
-            console.log(error);
           })
           .then((res) => {
             dispatch({

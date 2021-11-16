@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
+import logo from './../../Images/Weblogo.png';
 import firebase from 'firebase/compat/app';
 import './nav.css';
 import { Link,useHistory } from 'react-router-dom';
@@ -21,7 +22,7 @@ const Nav=()=> {
            <div className="navt">
       {/* Top Header */}
 
-      <div class="banner-top" style={{ backgroundColor: '#b4c228' }}>
+      <div class="banner-top" style={{ backgroundColor: '#1161a8' }}>
         <div className="social-bnr-agileits">
           <ul className="social-icons3">
             <li><a href="https://www.facebook.com/" className="fa fa-facebook icon-border facebook"> </a></li>
@@ -48,20 +49,21 @@ const Nav=()=> {
             </li> */}
           </ul>
         </div>
-        <div class="clearfix" style={{ backgroundColor: 'rgb(180 194 40)' }}></div>
+        <div class="clearfix" style={{ backgroundColor: '#1161a8' }}></div>
       </div>
       {/* Top headers ends */}
       {/* Navbar  */}
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div className="container">
-          {/* <Link class="navbar-brand" to="/"><img alt="" className="log1" src={log} /></Link> */}
-          <h2>Secutity web</h2>
+        <div  className="container">
+          <Link class="navbar-brand" to="/"><img alt="" className="log1" src={logo} /></Link>
+          {/* <h2>Secutity web</h2> */}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          </div>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
 
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item active">
@@ -111,7 +113,7 @@ const Nav=()=> {
                )} 
             </ul>
           </div>
-        </div>
+        
       </nav>
 
       {/* navbar end */}

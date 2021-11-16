@@ -1,3 +1,4 @@
+// eslint-disable-next-line 
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import firebase from 'firebase/compat/app';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +18,7 @@ const Login=()=>{
   const [passwordShown, setPasswordShown] = useState(false);
 
   var separatedString;
+  var separatedString1;
   
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -43,18 +45,18 @@ const signInWithGoogle = async () => {
     const res = await auth.signInWithPopup(googleProvider);
     const user = res.user;
     const idTokenResult = await user.getIdTokenResult()
-    await db.collection('users')
-    // .where('uid', '==', user.email)
-    .doc(user.email)
-   .get()
-   .then(doc => {
-      if (doc && doc.exists) {
-          separatedString = doc.data();
-         //use separatedString
-      }
-   }).catch((error) => {
-        console.log(error);
-      });
+  //   await db.collection('users')
+  //   // .where('uid', '==', user.email)
+  //   .doc(user.email)
+  //  .get()
+  //  .then(doc => {
+  //     if (doc && doc.exists) {
+  //         separatedString = doc.data();
+  //        //use separatedString
+  //     }
+  //  }).catch((error) => {
+  //       console.log(error);
+  //     });
   
       
   
@@ -68,40 +70,39 @@ const signInWithGoogle = async () => {
 
 
 
-    await db.collection('users')
-    // .where('uid', '==', user.email)
-    .doc(user.email)
-   .get()
-   .then(async doc => {
-      if (separatedString.email!=user.email) {
-      await db.collection("users").doc(user.email).set({
-        
-        name: user.email.split('@')[0],
-         role: "user",
-        email: user.email,
-      })
-      
-      // history.push("/");
-      console.log("hello",user);
-    }
-    dispatch({
-      type: "LOGGED_IN_USER2",
-      payload: {
-        name: user.email.split("@")[0],
-        email: user.email,
-        token: idTokenResult.token,
-        role: separatedString.role,
-        id: user.email,
-      },
-    });
-    alert("successfully login");
+await db.collection("users").doc(user.email).get().then(async doc => {
+  if (doc.exists) {
+    separatedString =  doc.data();
+  console.log("already hee",separatedString);
+  } else {
+   await db.collection("users").doc(user.email).set({
+  name: user.email.split("@")[0],
+  email:user.email,
+  role:'user',
   }).catch((error) => {
     console.log(error);
   });
-
-    
-  }
   
+  
+}
+
+}).then(()=>{
+
+alert("successfully login");
+
+})
+
+dispatch({
+  type: "LOGGED_IN_USER2",
+  payload: {
+      name: user.email.split("@")[0],
+      email: user.email,
+      token: idTokenResult.token,
+      role:await separatedString.role,
+      id: user.email,
+    },
+  }) 
+}
   catch (err) {
     console.error(err);
     alert(err.message);
@@ -123,12 +124,12 @@ const signInWithEmailAndPassword = async () => {
       });
       var obj=JSON.stringify(separatedString.role);
       console.log("obj us hee",obj)
-      
+      const ad="";
       
      
       
 
-      
+      console.log("ad is here",ad)
      
     await auth.signInWithEmailAndPassword(email, password).then((res) => {
       
