@@ -26,6 +26,7 @@ const ShowPasswords = () => {
                     var data = element.data();
                     if (data.email === user.email) {
                         setServices(arr => [...arr, data]);
+                        console.log(services)
                     }
                 });
                 setLoading(false);
@@ -44,9 +45,9 @@ const ShowPasswords = () => {
 
                     <div className="row">
                         {services.map((p) => (
-
                             <div key={p.p_id}>
                                 <PasswordCard passwordData={p} />
+                                {console.log("data",p)}
                             </div>
                         ))}
                     </div>
