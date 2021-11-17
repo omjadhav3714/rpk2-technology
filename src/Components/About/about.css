@@ -33,6 +33,11 @@
     margin-right: auto;
     margin-left: auto;
 }
+.btn:hover{
+    color: white;
+    background-color: #1161a8;
+    border-color: white;
+}
 
 
 .company-heading h1 {
@@ -209,7 +214,7 @@ img {
 }
 .btn-solodev-red-reversed {
     background-color: #fff;
-    color: #d2282e;
+    color: #1161a8;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     padding: 12px 35px;
