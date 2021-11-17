@@ -26,6 +26,13 @@
     width: 100%;
     z-index: -10;
 }
+.container1 {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 
 .company-heading h1 {
@@ -90,6 +97,9 @@
 }
 .culture-section {
     background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url(https://png.pngtree.com/thumb_back/fh260/back_pic/03/80/06/3757c30a762387b.jpg) top no-repeat;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
     /* background-color: #095c87; */
     /* color: #fff; */
 }

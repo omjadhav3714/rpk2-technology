@@ -9,7 +9,7 @@ const about = () => {
 <div class="ct-pageWrapper" id="ct-js-wrapper">
   
   <section class="company-heading intro-type" id="parallax-one">
-    <div class="container">
+    <div class="container1">
       <div class="row product-title-info">
         <div class="col-md-12">          
           <h1>ABOUT US</h1>
@@ -22,7 +22,7 @@ const about = () => {
   
   
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
-    <div class="container text-center">
+    <div class="container1 text-center">
       <h2>WHAT DRIVES US</h2>
       <h3>Lorem ipsum - dolor</h3>
       <div class="col-md-8 col-md-offset-2">
@@ -33,7 +33,7 @@ const about = () => {
     </div>
   </section>
   <section class="culture-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding">
-    <div class="container">
+    <div class="container1">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h2>Our Security Products</h2>
@@ -91,7 +91,7 @@ const about = () => {
     </div>
   </section>
   <section class="customers-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding">
-    <div className="container">
+    <div className="container1">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h2>CUSTOMERS</h2>
@@ -105,11 +105,11 @@ const about = () => {
   </section>
 </div>
 {/* <main>
-  <div class="container ct-u-paddingTop40 ct-u-paddingBottom100">
+  <div class="container1 ct-u-paddingTop40 ct-u-paddingBottom100">
     <div class="row">
       <div class="col-md-12 ct-content">
         <section class="clients-home">
-          <div class="container">
+          <div class="container1">
             <div class="clients-logos text-center">
               <div class="row">
                 <div class="col-md-4 client-logos-repeater">
