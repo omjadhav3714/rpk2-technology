@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../../../Firebase';
 import Clientnav from '../complaient/Clientnav';
 import { Card } from 'antd';
+import './password.css';
 import PasswordCard from './PasswordCard';
 
 const ShowPasswords = () => {

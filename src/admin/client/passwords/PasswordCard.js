@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import './../../Singlecard.css';
 import { db } from '../../../Firebase';
+import './password.css';
 const { Meta } = Card;
 
 const PasswordCard = ({ passwordData }) => {
@@ -40,7 +41,7 @@ const PasswordCard = ({ passwordData }) => {
     return (
         <>
         {console.log(passwordData)}
-            <Card
+            {/* <Card
                 actions={[
                     <>
                         {<Button onClick={() =>  handleRemove(p_id.toString())} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
@@ -50,14 +51,26 @@ const PasswordCard = ({ passwordData }) => {
                         {<Link to={`/client/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
                     </>
                 ]}
-            >
+            > */}
                 {/* <hr/> */}
-                <Meta
+                {/* <Meta
                     title={model}
                     description={password}
                 />
-            </Card>
+            </Card> */}
+            <div className="row3">
+            <div className="box">
+                <div className="tit">
+                    <span><strong>Model: </strong>{model}</span><br/>
+                    <span><strong>Password:</strong> {password}</span>
+                    </div>
 
+            {<Button onClick={() =>  handleRemove(p_id.toString()) } type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                        </Button>}
+
+                        {<Link to={`/admin/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
+            </div>
+</div>
         </>
     )
 }
