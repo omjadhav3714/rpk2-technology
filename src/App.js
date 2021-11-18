@@ -123,7 +123,6 @@ function App() {
 
         <Route exact path="/itemdetail/:id" component={Itemdetail} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
       </Switch>
 
       <Footer />

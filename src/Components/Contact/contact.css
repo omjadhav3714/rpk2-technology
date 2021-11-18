@@ -47,7 +47,7 @@
   }
   .content .left-side .details i{
     font-size: 30px;
-    color: #4e9bc4;
+    color: rgb(17, 97, 168);;
     margin-bottom: 10px;
 }
 .content .left-side .details .topic{
@@ -66,7 +66,7 @@
 .content .right-side .topic-text{
   font-size: 25px;
   font-weight: 600;
-  color: #358fbf;
+  color: rgb(17, 97, 168);;
   padding-bottom: 6px;
 }
 .right-side .input-box{
@@ -103,12 +103,12 @@
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
-    background: #4e9bc4;
+    background: rgb(49, 130, 202);
     cursor: pointer;
     transition: all 0.3s ease;
   }
   .button input[type="button"]:hover{
-    background: #68A4C4;
+    background: rgb(17, 97, 168);
   }
   @media (max-width: 950px) {
     .con .container{
