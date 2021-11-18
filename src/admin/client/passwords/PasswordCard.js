@@ -10,20 +10,15 @@ const { Meta } = Card;
 
 const PasswordCard = ({ passwordData }) => {
 
-    const { p_id, model, password } = passwordData;
+    const { model, password, p_id } = passwordData;
 
 
     const handleRemove = async () => {
         if (window.confirm("Are you sure want to delete this item?")) {
             try {
                 await db.collection('passwords')
-                    // .where('uid', '==', user.email)
                     .doc(p_id)
-                    .delete().then(() => {
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    .delete();
                 window.location.reload()
 
             } catch (err) {
@@ -39,7 +34,7 @@ const PasswordCard = ({ passwordData }) => {
             <Card
                 actions={[
                     <>
-                        {<Button onClick={() => { handleRemove(model); console.log(model) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                        {<Button onClick={() => { handleRemove(p_id) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
 
                         </Button>}
 

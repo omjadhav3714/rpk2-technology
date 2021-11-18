@@ -39,7 +39,7 @@ const AdminPasswordCard = ({ passwordData }) => {
             <Card
                 actions={[
                     <>
-                        {<Button onClick={() => { handleRemove(model); console.log(model) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                        {<Button onClick={() => { handleRemove(p_id.toString()); console.log(model) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         </Button>}
 
                         {<Link to={`/admin/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}

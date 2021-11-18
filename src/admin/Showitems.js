@@ -55,8 +55,6 @@ const Showitems = ({ service }) => {
 
   return (
     <>
-
-
       <Card
         cover={
           // eslint-disable-next-line jsx-a11y/alt-text
