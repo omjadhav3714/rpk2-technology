@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../../../Firebase';
 import Clientnav from '../complaient/Clientnav';
 import { Card } from 'antd';
+import './password.css';
 import PasswordCard from './PasswordCard';
 
 const ShowPasswords = () => {
@@ -26,6 +27,7 @@ const ShowPasswords = () => {
                     var data = element.data();
                     if (data.email === user.email) {
                         setServices(arr => [...arr, data]);
+                        console.log(services)
                     }
                 });
                 setLoading(false);
@@ -44,9 +46,9 @@ const ShowPasswords = () => {
 
                     <div className="row">
                         {services.map((p) => (
-
                             <div key={p.p_id}>
                                 <PasswordCard passwordData={p} />
+                                {console.log("data",p)}
                             </div>
                         ))}
                     </div>

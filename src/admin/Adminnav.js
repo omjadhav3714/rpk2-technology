@@ -34,7 +34,7 @@ const Adminnav=()=> {
             </li>
             <li className="nav-item">
                 <Link to="/admin/complaient" className="nav-link">
-                     View Complaient
+                     View Complaint
                 </Link>
             </li>
             <li className="nav-item">

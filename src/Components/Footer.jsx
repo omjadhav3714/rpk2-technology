@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function footer(){
     return(  
     <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -26,33 +27,34 @@ function footer(){
           <div className="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i className="bx bx-chevron-right"></i> <span>Home</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>About us</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Services</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Terms of service</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Privacy policy</span></li>
+              <li><Link to="/"><i className="bx bx-chevron-right"></i> <span>Home</span></Link></li>
+              <li><Link to="/about"><i className="bx bx-chevron-right"></i> <span>About</span></Link></li>
+              <li><Link to="/contacts"><i className="bx bx-chevron-right"></i> <span>Contact us</span></Link></li>
+              <li><Link to="/testimonial"><i className="bx bx-chevron-right"></i> <span>Testimonial</span></Link></li>
+              <li><Link to="/login"><i className="bx bx-chevron-right"></i> <span>Login</span></Link></li>
+              {/* <li><i className="bx bx-chevron-right"></i> <span>Privacy policy</span></li> */}
             </ul>
           </div>
 
           <div className="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i className="bx bx-chevron-right"></i> <span>Web Design</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Web Development</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Product Management</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Marketing</span></li>
-              <li><i className="bx bx-chevron-right"></i> <span>Graphic Design</span></li>
+              <li><i className="bx bx-chevron-right"></i> <span>IP CCTV System</span></li>
+              <li><i className="bx bx-chevron-right"></i> <span>Networking</span></li>
+              <li><i className="bx bx-chevron-right"></i> <span>Biometric</span></li>
+              <li><i className="bx bx-chevron-right"></i> <span>EPBX Systems</span></li>
+              <li><i className="bx bx-chevron-right"></i> <span>Inverter</span></li>
             </ul>
           </div>
 
           <div className="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street<br />
-              New York, NY 535022<br />
-              United States<br /> 
-              <strong>Phone:</strong> +1 5589 55488 55<br />
-              <strong>Email:</strong> info@example.com<br />
+              Shop No 4,Opp Jankalyan Hospital,<br />
+              Amardeep Railway staff colony, <br/>Shri Malang Road<br />
+              Kalyan (E) 421306<br /> 
+              <strong>Phone:</strong> 8850138934<br />
+              <strong>Email:</strong> rpk2technology@gmail.com<br />
             </p>
 
           </div>
@@ -60,10 +62,10 @@ function footer(){
           <div className="col-lg-3 col-md-6 footer-info">
             <h3>Social Links</h3>
             <div className="social-links mt-3">
-              <span className="icon"><i className="fa fa-twitter"></i></span>
-              <span className="icon ml-4"><i className="fa fa-facebook"></i></span>
-              <span className="icon ml-4"><i className="fa fa-instagram"></i></span>
-              <span className="icon ml-4"><i className="fa fa-linkedin"></i></span>
+              <span className="icon"><a href=""><i className="fa fa-twitter"></i></a></span>
+              <span className="icon ml-1"><a href=""><i className="fa fa-facebook"></i></a></span>
+              <span className="icon ml-1"><a href=""><i className="fa fa-instagram"></i></a></span>
+              <span className="icon ml-1"><a href="https://wa.me/+918976129650?text=Hi%20I'm%20interested%20for%20opting%20for%20a%20service"><i className="fa fa-whatsapp"></i></a></span>
             </div>
           </div>
 
@@ -73,7 +75,7 @@ function footer(){
 
     <div className="container">
       <div className="copyright">
-        &copy; Copyright <strong><span>Name</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Rpk2 Technology</span></strong>. All Rights Reserved
       </div>
       
     </div>

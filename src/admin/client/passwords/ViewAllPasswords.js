@@ -5,7 +5,7 @@ import { db } from '../../../Firebase';
 import Adminnav from '../../Adminnav';
 import { Card } from 'antd';
 import AdminPasswordCard from './AdminPasswordCard';
-
+import './password.css';
 const { Meta } = Card;
 
 const ShowAllPasswords = () => {

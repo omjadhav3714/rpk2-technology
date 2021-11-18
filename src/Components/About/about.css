@@ -26,6 +26,18 @@
     width: 100%;
     z-index: -10;
 }
+.container1 {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn:hover{
+    color: white;
+    background-color: #1161a8;
+    border-color: white;
+}
 
 
 .company-heading h1 {
@@ -90,6 +102,9 @@
 }
 .culture-section {
     background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url(https://png.pngtree.com/thumb_back/fh260/back_pic/03/80/06/3757c30a762387b.jpg) top no-repeat;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
     /* background-color: #095c87; */
     /* color: #fff; */
 }
@@ -199,7 +214,7 @@ img {
 }
 .btn-solodev-red-reversed {
     background-color: #fff;
-    color: #d2282e;
+    color: #1161a8;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     padding: 12px 35px;

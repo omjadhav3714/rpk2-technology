@@ -10,36 +10,36 @@ const { Meta } = Card;
 
 const AdminPasswordCard = ({ passwordData }) => {
 
-    const { p_id, model, password } = passwordData;
+    const {  model, password,p_id } = passwordData;
 
 
-    const handleRemove = async () => {
+    const handleRemove = async (id) => {
         if (window.confirm("Are you sure want to delete this item?")) {
-            try {
+            
                 await db.collection('passwords')
                     // .where('uid', '==', user.email)
-                    .doc(p_id)
+                    .doc(id)
                     .delete().then(() => {
+                        // console.log("Image is here")
+                        window.location.reload()
                     })
                     .catch((error) => {
                         console.log(error);
                     });
-                window.location.reload()
+                
 
-            } catch (err) {
-                console.error(err);
-                alert(err.message);
-            }
-        }
+            } 
+        
     };
 
 
     return (
         <>
-            <Card
+        {console.log(typeof(passwordData.p_id))}
+            {/* <Card
                 actions={[
                     <>
-                        {<Button onClick={() => { handleRemove(p_id.toString()); console.log(model) }} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                        {<Button onClick={() =>  handleRemove(p_id.toString()) } type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
                         </Button>}
 
                         {<Link to={`/admin/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
@@ -50,7 +50,18 @@ const AdminPasswordCard = ({ passwordData }) => {
                     title={model}
                     description={password}
                 />
-            </Card>
+            </Card> */}
+            <div className="box">
+                <div className="tit">
+                <span><strong>Model: </strong>{model}</span><br/>
+                    <span><strong>Password:</strong> {password}</span>
+                    </div>
+
+            {<Button onClick={() =>  handleRemove(p_id.toString()) } type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                        </Button>}
+
+                        {<Link to={`/admin/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
+            </div>
 
         </>
     )
