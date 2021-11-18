@@ -1,34 +1,33 @@
-import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
-import {DeleteOutlined ,EditOutlined } from '@ant-design/icons';
+import { EditOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { db } from "../Firebase";
 import './tables.css';
 import Adminnav from './Adminnav';
-const Usersretrive=()=> {
-    const [services, setServices] = useState([]);
+const Usersretrive = () => {
+  const [services, setServices] = useState([]);
   useEffect(() => {
     loadAllServices();
   }, []);
 
   const { user } = useSelector((state) => ({ ...state }));
-  const loadAllServices = async() => {
+  const loadAllServices = async () => {
     await db.collection('users').get().then((querySnapshot) => {
-             
-        // Loop through the data and store
-        // it in array to display
-        querySnapshot.forEach(element => {
-            var data = element.data();
-            setServices(arr => [...arr , data]);
-              
-        });
+
+      // Loop through the data and store
+      // it in array to display
+      querySnapshot.forEach(element => {
+        var data = element.data();
+        setServices(arr => [...arr, data]);
+
+      });
     })
-    
+
   };
-    return (
-        <>
-        <div className="container-fluid">
+  return (
+    <>
+      <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
             <Adminnav />
@@ -44,20 +43,20 @@ const Usersretrive=()=> {
                   <div class="col col-3" style={{ paddingRight: '16vw' }}>Role</div>
 
                 </li>
-                {console.log("here is user",services)}
+                {console.log("here is user", services)}
                 {services.map((s) => (
                   <>
                     <li class="table-row">
                       <div class="col col1" data-label="Name">{s.name}</div>
                       <div class="col col2 " data-label="Gmail">{s.email}</div>
                       <div class="col col8" data-label="Role">{s.role}</div>
-                      {user&&(user.role === 'admin' && <Link to={`/admin/changerole/${s.email}`}><EditOutlined  type="primary" className="mb-3 custom1" block shape="round"  size="small"/></Link>
-                        
-                        )}                        
+                      {user && (user.role === 'admin' && <Link to={`/admin/changerole/${s.email}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>
+
+                      )}
                     </li>
 
                   </>
-                 ))} 
+                ))}
 
               </ul>
             </div>
@@ -67,8 +66,8 @@ const Usersretrive=()=> {
       </div>
 
 
-        </>
-    )
+    </>
+  )
 }
 
 export default Usersretrive

@@ -1,17 +1,15 @@
 /* eslint-disable array-callback-return */
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import './../../Singlecard.css';
 import { db } from '../../../Firebase';
 import './password.css';
-const { Meta } = Card;
 
 const PasswordCard = ({ passwordData }) => {
 
-    const {  model, password,p_id } = passwordData;
+    const { model, password, p_id } = passwordData;
 
 
     const handleRemove = async (id) => {
@@ -27,7 +25,7 @@ const PasswordCard = ({ passwordData }) => {
                     .catch((error) => {
                         console.log(error);
                     });
-                    console.log(passwordData)
+                console.log(passwordData)
                 // window.location.reload()
 
             } catch (err) {
@@ -40,7 +38,7 @@ const PasswordCard = ({ passwordData }) => {
 
     return (
         <>
-        {console.log(passwordData)}
+            {console.log(passwordData)}
             {/* <Card
                 actions={[
                     <>
@@ -52,25 +50,25 @@ const PasswordCard = ({ passwordData }) => {
                     </>
                 ]}
             > */}
-                {/* <hr/> */}
-                {/* <Meta
+            {/* <hr/> */}
+            {/* <Meta
                     title={model}
                     description={password}
                 />
             </Card> */}
             <div className="row3">
-            <div className="box">
-                <div className="tit">
-                    <span><strong>Model: </strong>{model}</span><br/>
-                    <span><strong>Password:</strong> {password}</span>
+                <div className="box">
+                    <div className="tit">
+                        <span><strong>Model: </strong>{model}</span><br />
+                        <span><strong>Password:</strong> {password}</span>
                     </div>
 
-            {<Button onClick={() =>  handleRemove(p_id.toString()) } type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
-                        </Button>}
+                    {<Button onClick={() => handleRemove(p_id.toString())} type="danger" className="mb-3 custom" block shape="round" icon={<DeleteOutlined />} size="small">
+                    </Button>}
 
-                        {<Link to={`/admin/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
+                    {<Link to={`/client/editpassword/${p_id}`}><EditOutlined type="primary" className="mb-3 custom1" block shape="round" size="small" /></Link>}
+                </div>
             </div>
-</div>
         </>
     )
 }

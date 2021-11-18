@@ -1,6 +1,5 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-
-import { Pagination } from 'antd';
 import Showitems from './Showitems';
 import { db } from '../Firebase';
 import Adminnav from './Adminnav';
@@ -8,7 +7,6 @@ function Viewitems() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [servicesCount, setServicesCount] = useState(0);
 
 
   useEffect(() => {
@@ -16,10 +14,6 @@ function Viewitems() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
-  // useEffect(() => {
-  //     getServicesCount()
-  //         .then((res) => setServicesCount(res.data));
-  // }, []);
 
   const loadAllServices = async () => {
     setLoading(true);
@@ -59,4 +53,3 @@ function Viewitems() {
 }
 
 export default Viewitems
-// handleRemove={handleRemove}

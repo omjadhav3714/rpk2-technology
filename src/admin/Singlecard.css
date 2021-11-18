@@ -1,4 +1,4 @@
-.imgtext{
+.imgtext {
     display: inline-flex;
     flex-wrap: wrap;
 }
@@ -6,17 +6,19 @@
 .bg-info {
     background-color: #fbfbfd !important;
 }
-.guranc{
+
+.guranc {
     max-width: 17%;
 }
 
 actions>li>span a:not(.ant-btn) {
     display: inline-block;
     width: 100%;
-    color: rgba(0,0,0,.45);
+    color: rgba(0, 0, 0, .45);
     line-height: 22px;
     transition: color .3s;
 }
+
 .ant-card-actions>li>span {
     position: relative;
     display: block;
@@ -25,7 +27,8 @@ actions>li>span a:not(.ant-btn) {
     line-height: 1.5715;
     cursor: pointer;
 }
-.heading1{
+
+.heading1 {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -35,27 +38,30 @@ px
 ; */
     font-size: 5.1vh;
     color: #000;
-    font-family: "Rouge Script",cursive;
+    font-family: "Rouge Script", cursive;
     font-weight: 600;
     line-height: 32px;
     text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
 }
+
 .ant-card-actions>li:not(:last-child) {
-    border-right: 2px solid #f0f0f0!important;
+    border-right: 2px solid #f0f0f0 !important;
 }
+
 .ant-card-actions {
     margin: 0;
     padding: 0;
     list-style: none;
     background: #fff;
-    border-top: 2px solid #f0f0f0!important;
+    border-top: 2px solid #f0f0f0 !important;
 }
+
 /* svg:not(:root) {
     overflow: hidden;
     color: cadetblue;
     font-size: 27px;
 } */
-.tit2{
+.tit2 {
     font-family: "Comic Sans MS";
     color: #4e4d4d;
 
@@ -63,36 +69,42 @@ px
     text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
     font-weight: 600;
 }
-.custom{
+
+.custom {
     font-size: 25px;
     border: none;
     background-color: transparent;
     color: #cf011c;
     margin-top: -2vh;
 }
-.custom1{
+
+.custom1 {
     font-size: 25px;
     border: none;
     background-color: transparent;
     color: #007cb4;
 }
-.cust2{
+
+.cust2 {
     width: 100%;
-    margin-top:9px;
+    margin-top: 9px;
     font-size: 28px;
     text-align: center;
 }
+
 .ant-card {
     transition: .4s ease;
-    border-radius: 6px!important;
+    border-radius: 6px !important;
 }
 
 .ant-card-bordered:hover {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 16px 0 rgb(0 0 0 / 19%);
 }
+
 .ant-card-bordered {
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%), 0 1px 2px 0 rgb(0 0 0 / 19%);
 }
+
 .ant-card-bordered {
     border: 1px solid #f0f0f0;
 }
@@ -102,123 +114,145 @@ px
     padding: 0;
     list-style: none;
     background: #fff;
-    border-top: 2px solid #f0f0f0!important;
+    border-top: 2px solid #f0f0f0 !important;
 }
-.ant-card-meta-description, .ant-card-meta-title {
-    font-family: "Josefin Sans",sans-serif;
+
+.ant-card-meta-description,
+.ant-card-meta-title {
+    font-family: "Josefin Sans", sans-serif;
     text-align: left;
 }
+
 .ant-card-bordered .ant-card-cover {
     margin-top: -1px;
     display: flex;
     margin-right: -1px;
     margin-left: -1px;
 }
+
 .ant-card-meta-description {
-    color: rgba(0,0,0,.45);
+    color: rgba(0, 0, 0, .45);
     font-size: 18px;
     text-transform: capitalize;
 }
+
 .ant-card-meta-title {
     overflow: hidden;
     color: #000;
     font-weight: 500;
     font-size: 30px;
 }
+
 .ant-card-meta-title {
     overflow: hidden;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-weight: 500;
     font-size: 16px;
     font-weight: 800;
     text-transform: capitalize;
-    
+
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.heading{
+
+.heading {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 29px;
     font-size: 5.1vh;
     color: #000;
-    font-family: "Rouge Script",cursive;
+    font-family: "Rouge Script", cursive;
     font-weight: 600;
     line-height: 32px;
     text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
 
 }
+
 .row {
     display: flex;
     flex-wrap: wrap;
     margin-top: 3vh;
     margin-right: 0 !important;
-    
+
     margin-left: 0 !important;
 }
+
 @media only screen and (max-width: 416px) {
-.imgtext{
-    justify-content: space-evenly;
-}
-.guranc{
-    max-width: 22.3%;
-}
-.au{
-    margin-left: auto;
-    margin-right: auto;
-}
-.tit2{
-    text-align: center;
-}
-.ant-card-meta-title {
-    font-size: 30px;
-    padding-left: 3vw;
-
-}
-.ant-card {
-    transition: .4s ease;
-    width: 81vw;
-    margin-right: auto;
-    margin-bottom: 4vh;
-    margin-left: auto;
-    border-radius: 6px !important;
-}
-
-.ant-card-meta-description, .ant-card-meta-title {
-    text-align: left;
-}
-.ant-card-meta-description{
-    padding-bottom: 2vh;
-    padding-left: 2vh;
-}
-.p-1 {
-    padding: 0.75rem!important;
-}
-}
-@media only screen and (min-width: 1200px) {
-    .imgtext{
-        
+    .imgtext {
         justify-content: space-evenly;
     }
-    .ant-card{
+
+    .guranc {
+        max-width: 22.3%;
+    }
+
+    .au {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tit2 {
+        text-align: center;
+    }
+
+    .ant-card-meta-title {
+        font-size: 30px;
+        padding-left: 3vw;
+
+    }
+
+    .ant-card {
+        transition: .4s ease;
+        width: 81vw;
+        margin-right: auto;
+        margin-bottom: 4vh;
+        margin-left: auto;
+        border-radius: 6px !important;
+    }
+
+    .ant-card-meta-description,
+    .ant-card-meta-title {
+        text-align: left;
+    }
+
+    .ant-card-meta-description {
+        padding-bottom: 2vh;
+        padding-left: 2vh;
+    }
+
+    .p-1 {
+        padding: 0.75rem !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .imgtext {
+
+        justify-content: space-evenly;
+    }
+
+    .ant-card {
         margin-right: 4vh;
     }
-    .guranc{
+
+    .guranc {
         float: right;
     }
+
     /* .card7{
         width:23.2vw;
         margin-right: 1vw !important;
         margin-left: 1vw !important;
     } */
-    
+
     .ant-card-meta-title {
         overflow: hidden;
-    color: #000;
-    font-weight: 500;
-    font-size: 30px;
-    text-align: center;
+        color: #000;
+        font-weight: 500;
+        font-size: 30px;
+        text-align: center;
     }
+
     .ant-card-meta-description {
         text-align: center;
         font-size: 20px;
@@ -226,8 +260,9 @@ px
         text-transform: capitalize;
         padding-right: 4px;
     }
+
     .p-1 {
-        padding: 0.45rem!important;
+        padding: 0.45rem !important;
     }
 
 }

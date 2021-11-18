@@ -6,19 +6,16 @@ import { Button } from 'antd';
 import { GoogleOutlined, MailOutlined } from '@ant-design/icons';
 import { Link,useHistory } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { auth, googleAuthProvider,app,db } from "../Firebase";
+import { auth,db } from "../Firebase";
 import { useDispatch, useSelector } from 'react-redux';
 import './login.css';
 const eye = <FontAwesomeIcon icon={faEye} />
 const Login=()=>{
-  var medName;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role1, setrole] = useState([]);
   const [passwordShown, setPasswordShown] = useState(false);
 
   var separatedString;
-  var separatedString1;
   
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);

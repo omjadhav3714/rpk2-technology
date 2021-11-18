@@ -1,19 +1,11 @@
-import { useHistory } from 'react-router-dom';
-import firebase from "firebase/compat/app";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
-
 import "../../Singlecard.css";
 import { db } from "../../../Firebase";
 
 function Compcarddetail({ item1, id, det }) {
-    let history = useHistory();
-  const [deces, setdeces] = useState(det.decision);
   const Onhandle = async (e) => {
     e.preventDefault();
     // setdeces(e.target.value);
-    var tar =e.target.value;
+    var tar = e.target.value;
     // var arr={
     //     brand: brand,
     //     description: description,
@@ -33,20 +25,19 @@ function Compcarddetail({ item1, id, det }) {
       })
       .then(() => {
         //   history.push("/");
-          window.location.reload()
-          console.log("this is id", e.target.value);
-          // history.push('/');        //   window.location.reload();
-        })
-        .catch((err) => {
-            console.log(err);
-            alert("Changes recorded failed");
-            window.location.reload();
-            
-            // alert("Successully change done");
+        window.location.reload()
+        console.log("this is id", e.target.value);
+        // history.push('/');        //   window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Changes recorded failed");
+        window.location.reload();
+
+        // alert("Successully change done");
         // alert(err.response.data.err);
       });
   };
-  const { user } = useSelector((state) => ({ ...state }));
   return (
     <>
       <div>
@@ -102,27 +93,17 @@ function Compcarddetail({ item1, id, det }) {
                   padding: "5px",
                 }}
                 name="decision"
-                // value={det.decision}
+              // value={det.decision}
               >
                 <option value={det.decision}>{det.decision}</option>
 
-                {det.decision == "disagree" ? (
+                {det.decision === "disagree" ? (
                   <option value="agree">agree</option>
                 ) : (
                   <option value="disagree">disagree</option>
                 )}
               </select>
             </div>
-            {/* <div>
-                              Approve/Disapprove: &nbsp;
-                <span  className="label label-default label-pill pull-xs-left">
-                <b> {det.decision} </b>
-                {user&&(user.role === 'client' && <Link to={`/client/changedecesion/${det.c_id}`}><EditOutlined  type="primary" className="mb-3 custom1" block shape="round"  size="small"/></Link>
-                        
-                        )}
-                </span>
-                
-                        </div> */}
           </li>
           <li className="list-group-item">
             Status: &nbsp;{" "}

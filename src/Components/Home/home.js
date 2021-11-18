@@ -4,12 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './home.css';
 import sec1 from '../../Images/security.gif';
 import sec2 from '../../Images/sec2.gif';
-import sec3 from '../../Images/sec3.gif';
 import sec4 from '../../Images/biomet.gif';
 function Home() {
     return (
         <>
-         <Carousel
+            <Carousel
                 showIndicators={true}
                 showArrows={false}
                 showStatus={false}
@@ -20,7 +19,7 @@ function Home() {
                 autoPlay={true}
                 className="mainco">
 
-<div className="jate">
+                <div className="jate">
                     <div>
                         <h2 className="hed">CORPORATE/COMMERCIAL SOLUTIONS </h2>
                         <h4 className="subma">Why to choose RPK2?</h4>
@@ -48,7 +47,7 @@ function Home() {
                     <img src={sec4} className="imag" alt="" />
                 </div>
 
-                </Carousel>
+            </Carousel>
         </>
     )
 }

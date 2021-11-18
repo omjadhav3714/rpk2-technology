@@ -1,6 +1,6 @@
+/* eslint-disable no-loop-func */
 import React from 'react'
 import Resizer from 'react-image-file-resizer';
-import { useSelector } from 'react-redux';
 import { Avatar, Badge } from 'antd';
 import './adminnav.css';
 require("dotenv").config();
@@ -8,38 +8,33 @@ require("dotenv").config();
 // const cloudinary = require('cloudinary');
 const cloudinary = require('cloudinary/lib/cloudinary');
 cloudinary.config({
-    cloud_name:'dtwkfae0p',
+    cloud_name: 'dtwkfae0p',
     api_key: '459219175487354',
     api_secret: 'Dfy10-XcsTTB2JSrPZiPaF4qCW8',
 });
-const Uploadfile=({ values, setValues, setLoading })=> {
+const Uploadfile = ({ values, setValues, setLoading }) => {
 
     var result;
     var image_id;
-//config
+    //config
 
 
-//to upload images to cloudinary
-const upload=async(uri)=>{
-     result = await cloudinary.uploader.upload(uri, {
-        public_id: `${Date.now()}`,
-        resource_type: 'auto',
-    })
-    // alert({
-    //     public_id: result.public_id,
-    //     url: result.secure_url,
-    // });
-}
-//to remove uploaded images to cloudinary
-const remove=async(public_id)=>{
-     image_id = public_id;
-    cloudinary.uploader.destroy(image_id, (err, result) => {
-        if (err) return 
-        // alert( err );
-        alert("ok");
-    })
-}
-    const { user } = useSelector((state) => ({ ...state }));
+    //to upload images to cloudinary
+    const upload = async (uri) => {
+        result = await cloudinary.uploader.upload(uri, {
+            public_id: `${Date.now()}`,
+            resource_type: 'auto',
+        })
+    }
+    //to remove uploaded images to cloudinary
+    const remove = async (public_id) => {
+        image_id = public_id;
+        cloudinary.uploader.destroy(image_id, (err, result) => {
+            if (err) return
+            // alert( err );
+            alert("ok");
+        })
+    }
 
     const fileUploadAndResize = (e) => {
         let files = e.target.files;
@@ -93,7 +88,7 @@ const remove=async(public_id)=>{
 
     return (
         <>
-        <div className="row">
+            <div className="row">
                 {values.images &&
                     values.images.map((image) => (
                         <Badge
@@ -111,9 +106,9 @@ const remove=async(public_id)=>{
                         </Badge>
                     ))}
             </div>
-            <br/>
+            <br />
             <div className="row">
-                <label style={{padding:"8px",borderRadius:"8px",transition:".4s ease all"}} className=" btn-primary btn-raised">Choose Files
+                <label style={{ padding: "8px", borderRadius: "8px", transition: ".4s ease all" }} className=" btn-primary btn-raised">Choose Files
                     <input
                         type="file"
                         hidden

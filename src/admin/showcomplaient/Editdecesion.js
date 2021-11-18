@@ -1,20 +1,21 @@
-import { Link, useHistory } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useHistory } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { db } from "../../Firebase";
 import Adminnav from "../Adminnav";
-const initialState={
-  c_id:'',
-  decision:'',
-  price:'',
-  status:'',
+const initialState = {
+  c_id: '',
+  decision: '',
+  price: '',
+  status: '',
 }
 const Editdecesion = () => {
   const id = useParams();
-  const num=JSON.stringify(id);
-  const num2=num.split(':')[1]
-  const num3=num2.split('}')[0].replace(/["]+/g, '')
-  
+  const num = JSON.stringify(id);
+  const num2 = num.split(':')[1]
+  const num3 = num2.split('}')[0].replace(/["]+/g, '')
+
   const [values, setValues] = useState(initialState);
   // const [deces, setdeces] = useState(det.decision);
   useEffect(() => {
@@ -25,8 +26,8 @@ const Editdecesion = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const Retrive = async () => {
-    console.log(",id  is  here",(num3))
-    try{
+    console.log(",id  is  here", (num3))
+    try {
       await db
         .collection('compdetail')
         // .where('uid', '==', user.email)
@@ -43,11 +44,11 @@ const Editdecesion = () => {
         .catch((error) => {
           console.log(error);
         });
-          
-      } catch (err) {
-        console.error(err);
-        alert(err.message);
-      }
+
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
   };
 
   const onhandle = async (e) => {
@@ -60,7 +61,7 @@ const Editdecesion = () => {
       .update({
         price: values.price,
         status: values.status,
-      }) .then(() => {
+      }).then(() => {
         alert("Changes recorded");
         history.push("/admin/complaient")
       })
@@ -76,7 +77,7 @@ const Editdecesion = () => {
   return (
 
     <>
-    {/* {console.log("This is doc", values)} */}
+      {/* {console.log("This is doc", values)} */}
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
@@ -106,7 +107,7 @@ const Editdecesion = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" style={{marginTop: '15px',borderRadius:"10px",transition:".4s ease all"}} className=" btn-outline-info" >Save</button>
+              <button type="submit" style={{ marginTop: '15px', borderRadius: "10px", transition: ".4s ease all" }} className=" btn-outline-info" >Save</button>
             </form>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import Features from "./Features";
 import Home1 from "./Home/home";
 import Homeitems from "./Home/Homeitems";
 import Gototestimonial from './Home/gototestimonial'
