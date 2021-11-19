@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { auth, db } from "./Firebase";
-import { useDispatch } from 'react-redux';
-import './App.css';
-import React, { useEffect, lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router';
+import { useDispatch } from "react-redux";
+import "./App.css";
+import React, { useEffect, lazy, Suspense } from "react";
+import { Switch, Route } from "react-router";
 // eslint-disable-next-line
 import { useSelector } from "react-redux";
 
@@ -59,75 +59,142 @@ function App() {
               console.log("hello data", doc.data());
               //use separatedString1
             }
-          })
-          .then((res) => {
             dispatch({
               type: "LOGGED_IN_USER2",
               payload: {
-                name: separatedString1.email.split("@")[0],
+                name: separatedString1.name,
                 email: separatedString1.email,
                 token: idTokenResult.token,
                 role: separatedString1.role,
-                // id: res.data.id,
+                id: separatedString1.email,
               },
-            });
+            
           })
-          .catch();
+          }).catch((error) => {
+            console.log(error);
+          });
+          
+          
+          
       }
     });
     return () => unsubscribe();
   }, [dispatch]);
 
-  return (<div>
-    <Suspense fallback={
+  return (
+    <div>
+      <Suspense
+        fallback={
+          <div className="load">
+            <h1>
+              Loading
+              <div class="dots">
+                <span class="dot z"></span>
+                <span class="dot f"></span>
+                <span class="dot s"></span>
+                <span class="dot t">
+                  <span class="dot l"></span>
+                </span>
+              </div>
+            </h1>
+          </div>
+        }
+      >
+        <Navbar />
 
-      <div className="load">
-        <h1>Loading
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/testimonial" component={Testimonial} />
+          <Route exact path="/contacts" component={Contact} />
 
-          <div class="dots"><span class="dot z"></span><span class="dot f"></span><span class="dot s"></span><span class="dot t"><span class="dot l"></span></span></div>
-        </h1></div>
-    }>
-      <Navbar />
+          {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
+          <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/testimonial" component={Testimonial} />
-        <Route exact path="/contacts" component={Contact} />
+          <AdminRoute exact path="/admin/additems" component={Additems} />
+          <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
+          <AdminRoute
+            exact
+            path="/admin/contactretrive"
+            component={Contactretrive}
+          />
+          <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
+          <AdminRoute
+            exact
+            path="/admin/editpassword/:id"
+            component={EditPassword}
+          />
+          <AdminRoute
+            exact
+            path="/admin/changerole/:id"
+            component={Changerole}
+          />
+          <AdminRoute
+            exact
+            path="/admin/complaient"
+            component={Showclientcomplaient}
+          />
+          <AdminRoute
+            exact
+            path="/admin/viewuserdet/:id"
+            component={Innerdetail}
+          />
+          <AdminRoute
+            exact
+            path="/admin/changedecesion/:id"
+            component={Editdecesion}
+          />
+          <AdminRoute
+            exact
+            path="/admin/savedpasswords"
+            component={ViewAllPasswords}
+          />
 
+          <AdminRoute
+            exact
+            path="/admin/testimonial"
+            component={ReadTestimonial}
+          />
+          <ClientRoute exact path="/client/clientnav" component={Clientnav} />
+          <ClientRoute
+            exact
+            path="/client/addcomplaient"
+            component={Addcomplaient}
+          />
+          <ClientRoute
+            exact
+            path="/client/viewcomplaient"
+            component={Complaientview}
+          />
+          <ClientRoute
+            exact
+            path="/client/viewdetailcom/:id"
+            component={Compdetail}
+          />
+          <ClientRoute
+            exact
+            path="/client/savepasswords"
+            component={SavePasswords}
+          />
+          <ClientRoute
+            exact
+            path="/client/viewpasswords"
+            component={ShowPasswords}
+          />
+          <ClientRoute
+            exact
+            path="/client/editpassword/:id"
+            component={EditPassword}
+          />
 
-        {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
-        <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
+          <Route exact path="/itemdetail/:id" component={Itemdetail} />
+          <Route exact path="/about" component={About} />
+        </Switch>
 
-        <AdminRoute exact path="/admin/additems" component={Additems} />
-        <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
-        <AdminRoute exact path="/admin/contactretrive" component={Contactretrive} />
-        <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
-        <AdminRoute exact path="/admin/editpassword/:id" component={EditPassword} />
-        <AdminRoute exact path="/admin/changerole/:id" component={Changerole} />
-        <AdminRoute exact path="/admin/complaient" component={Showclientcomplaient} />
-        <AdminRoute exact path="/admin/viewuserdet/:id" component={Innerdetail} />
-        <AdminRoute exact path="/admin/changedecesion/:id" component={Editdecesion} />
-        <AdminRoute exact path="/admin/savedpasswords" component={ViewAllPasswords} />
-
-
-        <AdminRoute exact path="/admin/testimonial" component={ReadTestimonial} />
-        <ClientRoute exact path="/client/clientnav" component={Clientnav} />
-        <ClientRoute exact path="/client/addcomplaient" component={Addcomplaient} />
-        <ClientRoute exact path="/client/viewcomplaient" component={Complaientview} />
-        <ClientRoute exact path="/client/viewdetailcom/:id" component={Compdetail} />
-        <ClientRoute exact path="/client/savepasswords" component={SavePasswords} />
-        <ClientRoute exact path="/client/viewpasswords" component={ShowPasswords} />
-        <ClientRoute exact path="/client/editpassword/:id" component={EditPassword} />
-
-        <Route exact path="/itemdetail/:id" component={Itemdetail} />
-        <Route exact path="/about" component={About} />
-      </Switch>
-
-      <Footer />
-    </Suspense>
-  </div>
+        <Footer />
+      </Suspense>
+    </div>
   );
 }
 

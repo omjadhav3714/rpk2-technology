@@ -85,20 +85,24 @@ await db.collection("users").doc(user.email).get().then(async doc => {
 
 }).then(()=>{
 
+  // window.location.reload();
 alert("successfully login");
 
 })
-
-dispatch({
+await db.collection("users").doc(user.email).get().then(async doc => {
+  if (doc.exists) {
+    var separatedString1 =  doc.data();}
+dispatch( {
   type: "LOGGED_IN_USER2",
   payload: {
       name: user.email.split("@")[0],
       email: user.email,
       token: idTokenResult.token,
-      role:await separatedString.role,
+      role:await separatedString1.role,
       id: user.email,
     },
-  }) 
+  })
+}) 
 }
   catch (err) {
     console.error(err);

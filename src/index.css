@@ -14,7 +14,9 @@ code {
     monospace;
 }
 
-
+footer{
+  margin-bottom: -3.9vh;
+}
 ::-webkit-scrollbar {
   width: 10px;
   background: #ffffff;
