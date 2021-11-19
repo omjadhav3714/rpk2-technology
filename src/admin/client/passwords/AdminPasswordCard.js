@@ -8,7 +8,7 @@ import { db } from '../../../Firebase';
 
 const AdminPasswordCard = ({ passwordData }) => {
 
-    const { model, password, p_id } = passwordData;
+    const {name, email,model, password, p_id } = passwordData;
 
 
     const handleRemove = async (id) => {
@@ -51,6 +51,8 @@ const AdminPasswordCard = ({ passwordData }) => {
             </Card> */}
             <div className="box">
                 <div className="tit">
+                <span><strong>Name: </strong>{name}</span><br />
+                <span><strong>Email: </strong>{email}</span><br />
                     <span><strong>Model: </strong>{model}</span><br />
                     <span><strong>Password:</strong> {password}</span>
                 </div>

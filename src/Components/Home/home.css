@@ -35,7 +35,7 @@
 }
 
 .hed {
-  color: #d4b547;
+  color: #2a4676;
   font-size: 4.4vh;
   font-family: "Poppins", sans-serif;
 
@@ -100,7 +100,7 @@
 
 @media only screen and (max-width: 375px) {
   .hed {
-    color: rgb(180 194 40);
+    color: #2a4676;
     padding-right: 21px;
     padding-left: 21px;
     line-height: inherit;

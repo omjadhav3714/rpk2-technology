@@ -15,7 +15,7 @@ function Home() {
                 showThumbs={false}
                 interval={4000}
                 infiniteLoop={true}
-                swipeable={true}
+                swipeable={false}
                 autoPlay={true}
                 className="mainco">
 

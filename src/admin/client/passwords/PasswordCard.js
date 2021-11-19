@@ -9,7 +9,7 @@ import './password.css';
 
 const PasswordCard = ({ passwordData }) => {
 
-    const { model, password, p_id } = passwordData;
+    const { name,model, password, p_id } = passwordData;
 
 
     const handleRemove = async (id) => {
@@ -59,6 +59,8 @@ const PasswordCard = ({ passwordData }) => {
             <div className="row3">
                 <div className="box">
                     <div className="tit">
+                    <span><strong>Name: </strong>{name}</span><br />
+                    
                         <span><strong>Model: </strong>{model}</span><br />
                         <span><strong>Password:</strong> {password}</span>
                     </div>
