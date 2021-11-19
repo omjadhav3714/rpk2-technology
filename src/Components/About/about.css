@@ -128,7 +128,7 @@
 }
 
 .culture-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(https://png.pngtree.com/thumb_back/fh260/back_pic/03/80/06/3757c30a762387b.jpg) top no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('./../../Images//about_image.jpg') top no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
