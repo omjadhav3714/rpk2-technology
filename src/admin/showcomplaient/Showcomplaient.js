@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react'
+import { motion } from "framer-motion";
 import '../Singlecard.css';
 import Complaientcard from './Complaientcard';
 import Adminnav from '../Adminnav';
@@ -33,6 +34,13 @@ const Showclientcomplaient = () => {
 
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       <div className="row">
         <div className="col-md-2">
           <Adminnav />
@@ -56,6 +64,7 @@ const Showclientcomplaient = () => {
         </div>
 
       </div>
+      </motion.div>
     </>
 
   )

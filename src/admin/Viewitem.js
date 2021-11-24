@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
+import { motion } from "framer-motion";
 import Showitems from './Showitems';
 import { db } from '../Firebase';
 import Adminnav from './Adminnav';
@@ -33,6 +34,13 @@ function Viewitems() {
 
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       <div className="row">
         <div className="col-md-2">
           <Adminnav />
@@ -48,6 +56,7 @@ function Viewitems() {
         </div>
 
       </div>
+      </motion.div>
     </>
   )
 }

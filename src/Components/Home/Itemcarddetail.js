@@ -1,11 +1,17 @@
 import React from 'react'
 import './../../admin/Singlecard.css';
-
+import { motion } from "framer-motion";
 function Itemcarddetail({ item1 }) {
 
 
     return (
         <>
+        <motion.div
+       
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
             <div>
                 <ul className="list-group">
                     <li className="list-group-item">
@@ -31,6 +37,7 @@ function Itemcarddetail({ item1 }) {
                 </ul>
                 {console.log("descri", item1.description)}
             </div>
+            </motion.div>
         </>
     )
 }

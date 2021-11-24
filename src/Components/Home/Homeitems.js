@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import LoadingCard from './Loadingcard';
 import { db } from '../../Firebase';
+import { motion } from "framer-motion";
 import Showitems from '../../admin/Showitems';
 import './../../admin/Singlecard.css';
 function Homeitems() {
@@ -33,6 +34,12 @@ function Homeitems() {
 
     return (
         <>
+          <motion.div
+        
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
             <h4 className="heading1">Items</h4>
             <div className="row">
 
@@ -48,6 +55,7 @@ function Homeitems() {
                     }
                 </div>
             </div>
+            </motion.div>
         </>
     )
 }

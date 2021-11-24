@@ -1,5 +1,6 @@
 import { DeleteOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import './tables.css';
@@ -46,6 +47,13 @@ function Contactretrive() {
   };
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
@@ -84,6 +92,8 @@ function Contactretrive() {
           </div>
         </div>
       </div>
+
+      </motion.div>
     </>
 
   )

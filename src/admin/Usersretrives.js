@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { EditOutlined } from '@ant-design/icons';
+import { motion } from "framer-motion";
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { db } from "../Firebase";
@@ -27,6 +28,13 @@ const Usersretrive = () => {
   };
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
@@ -44,6 +52,7 @@ const Usersretrive = () => {
 
                 </li>
                 {console.log("here is user", services)}
+                
                 {services.map((s) => (
                   <>
                     <li class="table-row">
@@ -65,7 +74,7 @@ const Usersretrive = () => {
         </div>
       </div>
 
-
+</motion.div>
     </>
   )
 }

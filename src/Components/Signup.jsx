@@ -1,4 +1,5 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from 'react';
 import { auth,db } from "../Firebase";
@@ -80,6 +81,12 @@ function Signup(){
   };
       return(
       <>
+      <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
          <div id="card">
           <div id="card-content">
             <div id="card-title">
@@ -116,7 +123,7 @@ function Signup(){
             </form>
           </div>
         </div>
- 
+        </motion.div>
       </>
   );
       }

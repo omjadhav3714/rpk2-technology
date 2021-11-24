@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import laptop from "../../../Images/login.png";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import { Card } from 'antd';
@@ -57,6 +58,12 @@ function Compdetail() {
     const { user } = useSelector((state) => ({ ...state }));
     return (
         <>
+        <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
             {console.log("this is item", item)}
             {item.map((p) => (
                 <div key={p.c_id}>
@@ -84,7 +91,7 @@ function Compdetail() {
                     ))}
                 </div>
             ))}
-
+</motion.div>
 
 
         </>

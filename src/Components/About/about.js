@@ -1,11 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './about.css'
-
+import { motion } from "framer-motion";
 const about = () => {
   return (
     <>
-
+    <motion.div
+        
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
       <div class="ct-pageWrapper" id="ct-js-wrapper">
 
         <section class="company-heading intro-type" id="parallax-one">
@@ -104,6 +109,7 @@ const about = () => {
           </div>
         </section>
       </div>
+      </motion.div>
     </>
   )
 }

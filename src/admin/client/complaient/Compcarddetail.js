@@ -1,6 +1,6 @@
 import "../../Singlecard.css";
 import { db } from "../../../Firebase";
-
+import { motion } from "framer-motion";
 function Compcarddetail({ item1, id, det }) {
   const Onhandle = async (e) => {
     e.preventDefault();
@@ -40,6 +40,12 @@ function Compcarddetail({ item1, id, det }) {
   };
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
       <div>
         <ul className="list-group">
           <li className="list-group-item">
@@ -114,6 +120,7 @@ function Compcarddetail({ item1, id, det }) {
         </ul>
         {console.log("descri", item1.description)}
       </div>
+      </motion.div>
     </>
   );
 }

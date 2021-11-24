@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Testimonial.css'
 import about from '../../Images/testimonial.gif';
+import { motion } from "framer-motion";
 import { db } from '../../Firebase';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -40,6 +41,12 @@ const Testimonial = () => {
 
 
     <>
+      <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
       <div className="aboutain">
         <img alt="" src={about} className="giffy" />
         <div class="center">
@@ -59,6 +66,7 @@ const Testimonial = () => {
           </form>
         </div>
       </div>
+      </motion.div>
     </>
 
 

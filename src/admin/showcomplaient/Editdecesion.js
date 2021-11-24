@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -77,6 +78,13 @@ const Editdecesion = () => {
   return (
 
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       {/* {console.log("This is doc", values)} */}
       <div className="container-fluid">
         <div className="row">
@@ -112,6 +120,7 @@ const Editdecesion = () => {
           </div>
         </div>
       </div>
+      </motion.div>
     </>
   );
 };

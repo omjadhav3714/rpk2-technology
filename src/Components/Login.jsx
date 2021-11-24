@@ -1,4 +1,5 @@
 // eslint-disable-next-line 
+import { motion } from "framer-motion";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import firebase from 'firebase/compat/app';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -156,6 +157,7 @@ const signInWithEmailAndPassword = async () => {
 };   
 
 const LoginForm = () => (
+ 
       <form onSubmit={signInWithEmailAndPassword} class="form">
         <label for="user-email" style={{ paddingTop: '13px' }}>
           &nbsp;Email
@@ -189,6 +191,12 @@ const LoginForm = () => (
       return(
 
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
  <div id="card">
         <div id="card-content">
           <div id="card-title">
@@ -201,6 +209,7 @@ const LoginForm = () => (
           </Button>
         </div>
       </div>
+      </motion.div>
     </>    
   );
 };

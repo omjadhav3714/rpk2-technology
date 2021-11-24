@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { auth, db } from "./Firebase";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 import "./App.css";
 import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router";
@@ -82,6 +83,9 @@ function App() {
   }, [dispatch]);
 
   return (
+    <motion.div initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}>
     <div>
       <Suspense
         fallback={
@@ -195,6 +199,7 @@ function App() {
         <Footer />
       </Suspense>
     </div>
+    </motion.div>
   );
 }
 

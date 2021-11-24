@@ -1,4 +1,5 @@
 /* eslint-disable array-callback-return */
+import { motion } from "framer-motion";
 import firebase from 'firebase/compat/app';
 import { DeleteOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
@@ -58,6 +59,12 @@ const Showcomplaient = ({ service, co }) => {
 
   return (
     <>
+      <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
       <Card
         cover={
           // eslint-disable-next-line jsx-a11y/alt-text
@@ -85,7 +92,7 @@ const Showcomplaient = ({ service, co }) => {
         />
       </Card>
 
-
+      </motion.div>
     </>
   )
 }

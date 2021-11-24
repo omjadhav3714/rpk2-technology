@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { db } from '../../Firebase';
 import './contact.css'
-
+import { motion } from "framer-motion";
 const Contact1 = () => {
 
   const [name, setname] = useState("");
@@ -28,6 +28,12 @@ const Contact1 = () => {
   };
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
       <div className="con">
         <div class="container">
           <div class="content">
@@ -72,6 +78,7 @@ const Contact1 = () => {
           </div>
         </div>
       </div>
+      </motion.div>
     </>
   )
 }

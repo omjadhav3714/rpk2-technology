@@ -1,5 +1,6 @@
 /* eslint-disable array-callback-return */
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { motion } from "framer-motion";
 import { useSelector } from 'react-redux';
 import React from 'react';
 import { Card } from 'antd';
@@ -55,6 +56,13 @@ const Showitems = ({ service }) => {
 
   return (
     <>
+     <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
+
       <Card
         cover={
           // eslint-disable-next-line jsx-a11y/alt-text
@@ -87,7 +95,7 @@ const Showitems = ({ service }) => {
           description={`${description && description.substring(0, 40)}...`}
         />
       </Card>
-
+</motion.div>
     </>
   )
 }

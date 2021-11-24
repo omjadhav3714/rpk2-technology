@@ -4,6 +4,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import React from 'react';
 import { Card } from 'antd';
+import { motion } from "framer-motion";
 import { EyeOutlined } from '@ant-design/icons';
 import laptop from "../../Images/login.png";
 import { Link } from 'react-router-dom';
@@ -56,7 +57,12 @@ const Complaientcard = ({ service, co }) => {
 
   return (
     <>
-
+ <motion.div
+       
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+     >
 
       <Card
         cover={
@@ -85,7 +91,7 @@ const Complaientcard = ({ service, co }) => {
           description={`${description && description.substring(0, 40)}...`}
         />
       </Card>
-
+      </motion.div>
     </>
   )
 }
