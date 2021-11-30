@@ -58,17 +58,12 @@ function Compdetail() {
     const { user } = useSelector((state) => ({ ...state }));
     return (
         <>
-        <motion.div
-       
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-     >
+     
             {console.log("this is item", item)}
             {item.map((p) => (
                 <div key={p.c_id}>
                     {p.comp.map((h) => (
-                        (h.c_id === id) ?
+                        (h.c_id == id) ?
                             <div className="row pt-4" key={h.name}>
                                 <div className="col-md-7">
                                     {h.image && h.image.length ? (
@@ -91,7 +86,7 @@ function Compdetail() {
                     ))}
                 </div>
             ))}
-</motion.div>
+
 
 
         </>

@@ -57,12 +57,7 @@ const Complaientcard = ({ service, co }) => {
 
   return (
     <>
- <motion.div
-       
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-     >
+ 
 
       <Card
         cover={
@@ -91,7 +86,7 @@ const Complaientcard = ({ service, co }) => {
           description={`${description && description.substring(0, 40)}...`}
         />
       </Card>
-      </motion.div>
+      
     </>
   )
 }

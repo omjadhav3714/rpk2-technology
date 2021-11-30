@@ -34,12 +34,6 @@ const Showclientcomplaient = () => {
 
   return (
     <>
-     <motion.div
-       
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-     >
 
       <div className="row">
         <div className="col-md-2">
@@ -64,7 +58,7 @@ const Showclientcomplaient = () => {
         </div>
 
       </div>
-      </motion.div>
+      
     </>
 
   )

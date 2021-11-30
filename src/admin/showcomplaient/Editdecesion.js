@@ -78,12 +78,7 @@ const Editdecesion = () => {
   return (
 
     <>
-     <motion.div
-       
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-     >
+     
 
       {/* {console.log("This is doc", values)} */}
       <div className="container-fluid">
@@ -120,7 +115,7 @@ const Editdecesion = () => {
           </div>
         </div>
       </div>
-      </motion.div>
+      
     </>
   );
 };

@@ -48,12 +48,7 @@ function Innerdetail() {
 
     return (
         <>
-         <motion.div
-       
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-     >
+     
 
         {console.log("This is id",id)}
             {item.map((p) => (
@@ -94,7 +89,7 @@ function Innerdetail() {
                     ))}
                 </div>
             ))}
-</motion.div>
+
         </>
     )
 }
