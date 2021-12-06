@@ -29,11 +29,24 @@ function Itemcarddetail({ item1 }) {
                     </li>
 
                     <li className="list-group-item">
+                        Catogery: &nbsp;{" "}
+                        <span className="label label-default label-pill pull-xs-left">
+                            <b> {item1.catogery}</b>
+                        </span>
+                    </li>
+                    <li className="list-group-item">
+                    Sub-Catogery: &nbsp;{" "}
+                        <span className="label label-default label-pill pull-xs-left">
+                            <b> {item1.subcatogery}</b>
+                        </span>
+                    </li>
+                    <li className="list-group-item">
                         Desc: &nbsp;{" "}
                         <span className="label label-default label-pill pull-xs-left">
                             <b> {item1.description}</b>
                         </span>
                     </li>
+
                 </ul>
                 {console.log("descri", item1.description)}
             </div>

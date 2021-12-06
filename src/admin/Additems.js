@@ -12,6 +12,8 @@ const initialState = {
   description: '',
   price: '',
   images: [],
+  catogery:"Catogery 1",
+  subcatogery:"Sub-Catogery 1",
 };
 const Additems = () => {
   const [loading, setLoading] = useState(false);
@@ -28,6 +30,8 @@ const Additems = () => {
       description: values.description,
       price: values.price,
       image: values.images,
+      catogery:values.catogery,
+      subcatogery:values.subcatogery,
     })
       .then((res) => {
         console.log(res);

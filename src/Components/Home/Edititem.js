@@ -14,6 +14,8 @@ const initialState = {
   description: '',
   price: '',
   image: [],
+  catogery:'',
+  subcatogery:'',
 };
 
 const Edititem = () => {
@@ -62,6 +64,8 @@ const Edititem = () => {
       description: values.description,
       price: values.price,
       image: values.image,
+      catogery:values.catogery,
+      subcatogery:values.subcatogery,
     })
       .then((res) => {
         console.log(res);
