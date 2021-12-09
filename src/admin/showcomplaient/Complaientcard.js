@@ -58,7 +58,7 @@ const Complaientcard = ({ service, co }) => {
   return (
     <>
  
-
+<div className="row"> 
       <Card
         cover={
           // eslint-disable-next-line jsx-a11y/alt-text
@@ -86,7 +86,7 @@ const Complaientcard = ({ service, co }) => {
           description={`${description && description.substring(0, 40)}...`}
         />
       </Card>
-      
+      </div>
     </>
   )
 }

@@ -43,7 +43,8 @@ const Showclientcomplaient = () => {
           {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet's</h4>)}
           <div className="row">
             {services.map((p) => (
-              <div style={{ gap: "2vw", display: "flex", flexWrap: "wrap", justifyContent: "center" }} className="au md-4 pb-3" key={p.brand}>
+              // <div style={{ gap: "2vw", display: "flex",  justifyContent: "center" }} className="au md-4 pb-3" key={p.brand}>
+              <>
                 {p.comp.map((h) => (
                   <div key={p.name} >
                     <Complaientcard service={h} co={p.comp} />
@@ -51,7 +52,8 @@ const Showclientcomplaient = () => {
 
                   </div>
                 ))}
-              </div>
+              </>
+              // </div>
 
             ))}
           </div>
