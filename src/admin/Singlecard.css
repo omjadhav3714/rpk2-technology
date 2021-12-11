@@ -230,12 +230,21 @@ px
 
 .row {
     display: flex;
+    flex-wrap: nowrap;
+    margin-top: 3vh;
+    margin-right: 0 !important;
+gap:7px;
+    margin-left: 0 !important;
+}
+.row-wrap {
+    display: flex;
     flex-wrap: wrap;
     margin-top: 3vh;
     margin-right: 0 !important;
 gap:7px;
     margin-left: 0 !important;
 }
+
 .rot{
     display: flex;
     flex-wrap: nowrap ;

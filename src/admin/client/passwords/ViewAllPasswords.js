@@ -41,7 +41,7 @@ const ShowAllPasswords = () => {
                 <div className="col">
                     {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Saved Passwords</h4>)}
 
-                    <div className="row">
+                    <div className="row-wrap">
                         {services.map((p) => (
 
                             <div key={p.p_id}>

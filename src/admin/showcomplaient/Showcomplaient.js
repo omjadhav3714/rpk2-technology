@@ -6,7 +6,7 @@ import '../Singlecard.css';
 import Complaientcard from './Complaientcard';
 import Adminnav from '../Adminnav';
 import { db } from '../../Firebase';
-
+import '../client/passwords/password.css';
 const Showclientcomplaient = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -35,13 +35,13 @@ const Showclientcomplaient = () => {
   return (
     <>
 
-      <div className="row">
+      <div className="row-wrap">
         <div className="col-md-2">
           <Adminnav />
         </div>
         <div className="col">
           {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet's</h4>)}
-          <div className="row">
+          <div className="row-wrap">
             {services.map((p) => (
               // <div style={{ gap: "2vw", display: "flex",  justifyContent: "center" }} className="au md-4 pb-3" key={p.brand}>
               <>
