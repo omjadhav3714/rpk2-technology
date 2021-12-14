@@ -68,7 +68,7 @@ const Showitems = ({ service }) => {
           // eslint-disable-next-line jsx-a11y/alt-text
           <img
             src={image && image.length ? image[0].url : laptop}
-            style={{ maxHeight: "32vh", marginLeft: "auto", marginRight: "auto", padding: "5px", objectFit: "contain", }}
+            style={{ maxHeight: "28vh", marginLeft: "auto", marginRight: "auto", padding: "5px", objectFit: "contain", }}
             className="p-1"
           />
         }
