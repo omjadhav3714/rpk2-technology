@@ -40,7 +40,7 @@ const ClientHistory = () => {
                     <Clientnav />
                 </div>
                 <div className="col">
-                    {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Saved Passwords</h4>)}
+                    {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Service Request</h4>)}
 
                     <div className="row">
                         {services.map((p) => (
