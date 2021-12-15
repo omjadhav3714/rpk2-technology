@@ -244,6 +244,14 @@ gap:7px;
 gap:7px;
     margin-left: 0 !important;
 }
+.row-wrap1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3vh;
+    margin-right: 0 !important;
+gap:0px;
+    margin-left: 0 !important;
+}
 
 .rot{
     display: flex;

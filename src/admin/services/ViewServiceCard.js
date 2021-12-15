@@ -53,9 +53,34 @@ const ViewServiceCard = ({ service }) => {
         }
     };
 
-    const handleSubmit = () => {
-        
-    }
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        const min = 1;
+        const max = 100000000000;
+        const rand = min + Math.random() * (max - min);
+        await db.collection("servicesRequest").doc(parseInt(rand).toString()).set({
+            sname: sname,
+            // image: image,
+            // s_id: parseInt(rand),
+            email: user.email,
+            address: address,
+            contact: contact,
+            sreq_id: parseInt(rand),
+
+        })
+            .then((res) => {
+                console.log(res);
+                // window.alert(`"${res.data.brands}" is created`);
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+                alert("Service Request added")
+                window.location.reload();
+            });
+    };
+
+    
 
     return (
         <>
@@ -117,6 +142,7 @@ const ViewServiceCard = ({ service }) => {
                         }}
                         value={contact}
                         type="text"
+                        maxLength='10'
                         className="form-control"
                         placeholder="Enter your contact no"
                         required
