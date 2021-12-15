@@ -27,6 +27,7 @@ import ViewServices from "./admin/services/ViewServices";
 import ReadServiceReq from "./admin/services/ReadServiceReq";
 
 import EditService from "./admin/services/EditService";
+import ClientHistory from "./admin/services/ClientHistory";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
 const Complaientview = lazy(() =>
@@ -195,6 +196,12 @@ function App() {
               path="/client/savepasswords"
               component={SavePasswords}
             />
+            <ClientRoute
+              exact
+              path="/client/clienthis"
+              component={ClientHistory}
+            />
+            
             <ClientRoute
               exact
               path="/client/viewpasswords"

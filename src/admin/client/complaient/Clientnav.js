@@ -27,6 +27,11 @@ const Clientnav = () => {
                             View Passwords
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/client/clienthis">
+                         My History
+                        </Link>
+                    </li>
 
                 </ul>
             </nav>
