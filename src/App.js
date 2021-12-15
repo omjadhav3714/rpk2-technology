@@ -24,6 +24,8 @@ import ViewAllPasswords from "./admin/client/passwords/ViewAllPasswords";
 import EditPassword from "./admin/client/passwords/EditPassword";
 import AddService from "./admin/services/AddService";
 import ViewServices from "./admin/services/ViewServices";
+import ReadServiceReq from "./admin/services/ReadServiceReq";
+
 import EditService from "./admin/services/EditService";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
@@ -166,6 +168,12 @@ function App() {
               path="/admin/testimonial"
               component={ReadTestimonial}
             />
+            <AdminRoute
+              exact
+              path="/admin/servicesrequests"
+              component={ReadServiceReq}
+            />
+            
             <ClientRoute exact path="/client/clientnav" component={Clientnav} />
             <ClientRoute
               exact
