@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.list-group-item :first-child {
+  margin-right: 0;
+}
 .load{
   display: grid;
   place-content: center;

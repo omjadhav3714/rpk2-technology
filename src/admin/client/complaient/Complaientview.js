@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../../../Firebase';
 import Clientnav from './Clientnav'
 import Showcomplaient from './Showcomplaient'
-
-
+import './../passwords/password.css';
+import'../../Singlecard.css';
 const Complaientview = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -46,7 +46,7 @@ const Complaientview = () => {
         <div className="col">
           {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">Complainet</h4>)}
 
-          <div className="row">
+          <div className="row-wrap">
             {services.map((p) => (
 
               <div style={{ gap: "2vw", display: "flex", flexWrap: "wrap", justifyContent: "center" }} className="md-4 pb-3" key={p.brand}>

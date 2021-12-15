@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Showitems from './Showitems';
 import { db } from '../Firebase';
 import Adminnav from './Adminnav';
+import './Singlecard.css';
+import './client/passwords/password.css';
 function Viewitems() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,7 +49,7 @@ function Viewitems() {
         </div>
         <div className="col">
           {loading ? (<h4 className="text-danger">Loading...</h4>) : (<h4 className="heading">All Items</h4>)}
-          <div className="row">{services.map((p) => (
+          <div className="row-wrap">{services.map((p) => (
             <div className="col-md-4 pb-3" key={p.brand}>
               <Showitems service={p} />
             </div>

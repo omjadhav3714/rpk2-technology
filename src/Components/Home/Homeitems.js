@@ -10,6 +10,7 @@ import ViewServiceCard from './../../admin/services/ViewServiceCard';
 function Homeitems() {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [search, setsearch] = useState('');
     const [page, setPage] = useState(1);
     const [servicehome, setServiceHome] = useState([]);
     useEffect(() => {

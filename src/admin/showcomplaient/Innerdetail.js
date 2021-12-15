@@ -55,7 +55,7 @@ function Innerdetail() {
                 <div key={p.rand} >
                     {p.comp.map((h) => (
                         (h.c_id == id) ?
-                            <div className="row pt-4" key={h.c_id}>
+                            <div className="rot pt-4" key={h.c_id}>
                                 <div className="col-md-7">
                                     {h.image && h.image.length ? (
                                         <Carousel autoPlay infiniteLoop showArrows={false}
