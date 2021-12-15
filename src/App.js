@@ -22,6 +22,9 @@ import SavePasswords from "./admin/client/passwords/SavePasswords";
 import ShowPasswords from "./admin/client/passwords/ShowPasswords";
 import ViewAllPasswords from "./admin/client/passwords/ViewAllPasswords";
 import EditPassword from "./admin/client/passwords/EditPassword";
+import AddService from "./admin/services/AddService";
+import ViewServices from "./admin/services/ViewServices";
+import EditService from "./admin/services/EditService";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
 const Complaientview = lazy(() =>
@@ -69,14 +72,14 @@ function App() {
                 role: separatedString1.role,
                 id: separatedString1.email,
               },
-            
-          })
+
+            })
           }).catch((error) => {
             console.log(error);
           });
-          
-          
-          
+
+
+
       }
     });
     return () => unsubscribe();
@@ -86,119 +89,122 @@ function App() {
     <motion.div initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}>
-    <div>
-      <Suspense
-        fallback={
-          <div className="load">
-            <h1>
-              Loading
-              <div class="dots">
-                <span class="dot z"></span>
-                <span class="dot f"></span>
-                <span class="dot s"></span>
-                <span class="dot t">
-                  <span class="dot l"></span>
-                </span>
-              </div>
-            </h1>
-          </div>
-        }
-      >
-        <Navbar />
+      <div>
+        <Suspense
+          fallback={
+            <div className="load">
+              <h1>
+                Loading
+                <div class="dots">
+                  <span class="dot z"></span>
+                  <span class="dot f"></span>
+                  <span class="dot s"></span>
+                  <span class="dot t">
+                    <span class="dot l"></span>
+                  </span>
+                </div>
+              </h1>
+            </div>
+          }
+        >
+          <Navbar />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/testimonial" component={Testimonial} />
-          <Route exact path="/contacts" component={Contact} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/testimonial" component={Testimonial} />
+            <Route exact path="/contacts" component={Contact} />
 
-          {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
-          <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
+            {/* <AdminRoute exact path="/admin/dashboard" component={Dashboard} /> */}
+            <AdminRoute exact path="/admin/useretrive" component={Usersretrive} />
 
-          <AdminRoute exact path="/admin/additems" component={Additems} />
-          <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
-          <AdminRoute
-            exact
-            path="/admin/contactretrive"
-            component={Contactretrive}
-          />
-          <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
-          <AdminRoute
-            exact
-            path="/admin/editpassword/:id"
-            component={EditPassword}
-          />
-          <AdminRoute
-            exact
-            path="/admin/changerole/:id"
-            component={Changerole}
-          />
-          <AdminRoute
-            exact
-            path="/admin/complaient"
-            component={Showclientcomplaient}
-          />
-          <AdminRoute
-            exact
-            path="/admin/viewuserdet/:id"
-            component={Innerdetail}
-          />
-          <AdminRoute
-            exact
-            path="/admin/changedecesion/:id"
-            component={Editdecesion}
-          />
-          <AdminRoute
-            exact
-            path="/admin/savedpasswords"
-            component={ViewAllPasswords}
-          />
+            <AdminRoute exact path="/admin/additems" component={Additems} />
+            <AdminRoute exact path="/admin/viewitems" component={Viewitems} />
+            <AdminRoute exact path="/admin/addservice" component={AddService} />
+            <AdminRoute exact path="/admin/viewservices" component={ViewServices} />
+            <AdminRoute exact path="/admin/editservice/:id" component={EditService} />
+            <AdminRoute
+              exact
+              path="/admin/contactretrive"
+              component={Contactretrive}
+            />
+            <AdminRoute exact path="/admin/edititem/:id" component={Edititem} />
+            <AdminRoute
+              exact
+              path="/admin/editpassword/:id"
+              component={EditPassword}
+            />
+            <AdminRoute
+              exact
+              path="/admin/changerole/:id"
+              component={Changerole}
+            />
+            <AdminRoute
+              exact
+              path="/admin/complaient"
+              component={Showclientcomplaient}
+            />
+            <AdminRoute
+              exact
+              path="/admin/viewuserdet/:id"
+              component={Innerdetail}
+            />
+            <AdminRoute
+              exact
+              path="/admin/changedecesion/:id"
+              component={Editdecesion}
+            />
+            <AdminRoute
+              exact
+              path="/admin/savedpasswords"
+              component={ViewAllPasswords}
+            />
 
-          <AdminRoute
-            exact
-            path="/admin/testimonial"
-            component={ReadTestimonial}
-          />
-          <ClientRoute exact path="/client/clientnav" component={Clientnav} />
-          <ClientRoute
-            exact
-            path="/client/addcomplaient"
-            component={Addcomplaient}
-          />
-          <ClientRoute
-            exact
-            path="/client/viewcomplaient"
-            component={Complaientview}
-          />
-          <ClientRoute
-            exact
-            path="/client/viewdetailcom/:id"
-            component={Compdetail}
-          />
-          <ClientRoute
-            exact
-            path="/client/savepasswords"
-            component={SavePasswords}
-          />
-          <ClientRoute
-            exact
-            path="/client/viewpasswords"
-            component={ShowPasswords}
-          />
-          <ClientRoute
-            exact
-            path="/client/editpassword/:id"
-            component={EditPassword}
-          />
+            <AdminRoute
+              exact
+              path="/admin/testimonial"
+              component={ReadTestimonial}
+            />
+            <ClientRoute exact path="/client/clientnav" component={Clientnav} />
+            <ClientRoute
+              exact
+              path="/client/addcomplaient"
+              component={Addcomplaient}
+            />
+            <ClientRoute
+              exact
+              path="/client/viewcomplaient"
+              component={Complaientview}
+            />
+            <ClientRoute
+              exact
+              path="/client/viewdetailcom/:id"
+              component={Compdetail}
+            />
+            <ClientRoute
+              exact
+              path="/client/savepasswords"
+              component={SavePasswords}
+            />
+            <ClientRoute
+              exact
+              path="/client/viewpasswords"
+              component={ShowPasswords}
+            />
+            <ClientRoute
+              exact
+              path="/client/editpassword/:id"
+              component={EditPassword}
+            />
 
-          <Route exact path="/itemdetail/:id" component={Itemdetail} />
-          <Route exact path="/about" component={About} />
-        </Switch>
+            <Route exact path="/itemdetail/:id" component={Itemdetail} />
+            <Route exact path="/about" component={About} />
+          </Switch>
 
-        <Footer />
-      </Suspense>
-    </div>
+          <Footer />
+        </Suspense>
+      </div>
     </motion.div>
   );
 }
