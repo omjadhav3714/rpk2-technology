@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
@@ -48,10 +49,10 @@ function footer(){
           <div className="col-lg-3 col-md-6 footer-info">
             <h3>Social Links</h3>
             <div className="social-links mt-3">
-              <span className="icon"><a href=""><i className="fa fa-twitter"></i></a></span>
-              <span className="icon ml-1"><a href=""><i className="fa fa-facebook"></i></a></span>
-              <span className="icon ml-1"><a href=""><i className="fa fa-instagram"></i></a></span>
-              <span className="icon ml-1"><a href="https://wa.me/+918976129650?text=Hi%20I'm%20interested%20for%20opting%20for%20a%20service"><i className="fa fa-whatsapp"></i></a></span>
+              <span className="icon"><a target="_blank" href=""><i className="fa fa-twitter"></i></a></span>
+              <span className="icon ml-1"><a target="_blank" href=""><i className="fa fa-facebook"></i></a></span>
+              <span className="icon ml-1"><a target="_blank" href=""><i className="fa fa-instagram"></i></a></span>
+              <span className="icon ml-1"><a target="_blank" href="https://wa.me/+918850138934?text=Hi%20I'm%20interested%20for%20opting%20for%20a%20service"><i className="fa fa-whatsapp"></i></a></span>
             </div>
           </div>
 

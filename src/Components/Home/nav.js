@@ -34,7 +34,7 @@ const Nav = () => {
           <div class="contact-bnr-w3-agile">
             <ul>
               <li id="ic"><i className="fa fa-envelope" aria-hidden="true"></i><a href="mailto:rpk2.vocalslocal@gmail.com">rpk2.vocalslocal@gmail.com</a></li>
-              <li id="ic"><i className="fa fa-phone" aria-hidden="true"></i><a href="tel:+91-7021198075">+91-7021198075</a></li>
+              <li id="ic"><i className="fa fa-phone" aria-hidden="true"></i><a href="tel:+91-7021198075">+91-8850138934</a></li>
 
 
             </ul>

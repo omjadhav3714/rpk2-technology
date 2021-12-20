@@ -88,7 +88,7 @@ const about = () => {
                 <div class="company-icons-white">
                   <i class="fa fa-solar-panel" aria-hidden="true"></i>
                   <p>Solar</p>
-                  <p className="company-icons-subtext hidden-xs">(DVR) records videos in a digital format.</p>
+                  <p className="company-icons-subtext hidden-xs">(DVR) records videos in analog camera.</p>
                 </div>
               </div>
             </div>
