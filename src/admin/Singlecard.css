@@ -28,12 +28,12 @@
 }
 .search>form {
     position: relative;
-    width: 20rem;
+    /* width: 20rem; */
     background: var(--color-brand);
     border-radius: var(--rad) ;
   }
 .ser>input, .ser>button {
-    height: 7vh;
+    height: 7.4vh;
     font-family: var(--font-fam);
     border: 1px whitesmoke;
     color: black;
@@ -41,7 +41,7 @@
 }
 .ser>input[type="search"] {
     outline: 0;
-    width: auto;
+    max-width: 100%;
     background: #f0f8fe;
     
     padding: 0 1.6rem;

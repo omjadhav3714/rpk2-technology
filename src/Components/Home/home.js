@@ -5,6 +5,7 @@ import './home.css';
 import sec1 from '../../Images/security.gif';
 import sec2 from '../../Images/sec2.gif';
 import sec4 from '../../Images/biomet.gif';
+
 function Home() {
     return (
         <>
