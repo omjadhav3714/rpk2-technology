@@ -78,7 +78,15 @@ actions>li>span a:not(.ant-btn) {
     line-height: 22px;
     transition: color .3s;
 }
+.items{
+    font-size: 5.1vh;
+    color: #000;
+    font-family: "Rouge Script", cursive;
+    font-weight: 600;
+    line-height: 32px;
+    text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
 
+}
 .ant-card-actions>li>span {
     position: relative;
     display: block;
@@ -96,12 +104,12 @@ actions>li>span a:not(.ant-btn) {
     /* margin-top: 29
 px
 ; */
-    font-size: 5.1vh;
+    /* font-size: 5.1vh;
     color: #000;
     font-family: "Rouge Script", cursive;
     font-weight: 600;
     line-height: 32px;
-    text-shadow: 5px 5px 7px rgb(0 0 0 / 20%);
+    text-shadow: 5px 5px 7px rgb(0 0 0 / 20%); */
 }
 
 .ant-card-actions>li:not(:last-child) {
