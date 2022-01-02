@@ -52,12 +52,12 @@ window.addEventListener(
     document.addEventListener("scroll", navbarShrink);
   
     // Activate Bootstrap scrollspy on the main nav element
-    const navbar = document.body.querySelector(".navbar");
-    if (navbar) {
-      new bootstrap.ScrollSpy(document.body, {
-        target: ".navbar",
-        offset: 74
-      });
-    }
+    // const navbar = document.body.querySelector(".navbar");
+    // if (navbar) {
+    //   new bootstrap.ScrollSpy(document.body, {
+    //     target: ".navbar",
+    //     offset: 74
+    //   });
+    // }
 });
 

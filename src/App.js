@@ -63,7 +63,7 @@ function App() {
           .then((doc) => {
             if (doc && doc.exists) {
               separatedString1 = doc.data();
-              console.log("hello data", doc.data());
+              // console.log("hello data", doc.data());
               //use separatedString1
             }
             dispatch({

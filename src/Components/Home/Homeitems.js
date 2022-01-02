@@ -52,13 +52,10 @@ function Homeitems() {
         })
     return (
         <>
-            <motion.div
-
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-            >
-                <h4 className="heading1">Items</h4>
+            
+                <div className="heading1">
+                <h4 className="items">Items</h4>
+                </div>
                 <div className="search">
             <form onsubmit="event.preventDefault();" className="ser">
             <input id="search"  type="search" placeholder="search item" value={search} onChange={e => setsearch(e.target.value)} />
@@ -80,7 +77,9 @@ function Homeitems() {
                     </div>
                 </div>
 
-                <h4 className="heading1">Services</h4>
+                <div className="heading1">
+                <h4 className="items">Services</h4>
+                </div>
                 <div className="row-wrap">
 
                     <div className="container">
@@ -95,7 +94,7 @@ function Homeitems() {
                         }
                     </div>
                 </div>
-            </motion.div>
+            
         </>
     )
 }
