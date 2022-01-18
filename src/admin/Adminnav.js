@@ -28,6 +28,11 @@ const Adminnav = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
+                        <Link className="nav-link" to="/admin/itemrequests">
+                            View Item Request
+                        </Link>
+                    </li>
+                    <li className="nav-item">
                         <Link className="nav-link" to="/admin/servicesrequests">
                             View Services Request
                         </Link>

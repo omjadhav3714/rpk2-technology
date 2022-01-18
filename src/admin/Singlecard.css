@@ -249,7 +249,7 @@ px
   flex-wrap: wrap;
   margin-top: 3vh;
   margin-right: 0 !important;
-  gap: 7px;
+  /* gap: 1px; */
   margin-left: 0 !important;
 }
 .row-wrap1 {

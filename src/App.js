@@ -28,6 +28,7 @@ import ReadServiceReq from "./admin/services/ReadServiceReq";
 
 import EditService from "./admin/services/EditService";
 import ClientHistory from "./admin/services/ClientHistory";
+import Itemrequest from "./admin/Itemrequest";
 // const Displayitem = lazy(() => import("./Components/Home/Displayitem"));
 
 const Complaientview = lazy(() =>
@@ -173,6 +174,11 @@ function App() {
               exact
               path="/admin/servicesrequests"
               component={ReadServiceReq}
+            />
+            <AdminRoute
+              exact
+              path="/admin/itemrequests"
+              component={Itemrequest}
             />
             
             <ClientRoute exact path="/client/clientnav" component={Clientnav} />
